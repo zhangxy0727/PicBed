@@ -1,0 +1,2770 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://47.93.20.191:10001/project.html?pid=0 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>中台室内仿真模块</title>
+	<link rel="stylesheet" href="./中台室内仿真模块_files/jquery-ui.css">
+	<link rel="stylesheet" href="./中台室内仿真模块_files/bootstrap.min.css">
+	<link href="./中台室内仿真模块_files/bootstrap-slider.min.css" rel="stylesheet">
+	<link href="./中台室内仿真模块_files/pretty-checkbox.min.css" rel="stylesheet">
+
+	<link href="./中台室内仿真模块_files/iconfont.css" rel="stylesheet">
+	<link href="./中台室内仿真模块_files/common.css" rel="stylesheet">
+	<link href="./中台室内仿真模块_files/app.css" rel="stylesheet">
+	<link href="./中台室内仿真模块_files/headermenu.css" rel="stylesheet">
+	<link href="./中台室内仿真模块_files/floorbtns.css" rel="stylesheet">
+	<link href="./中台室内仿真模块_files/model.css" rel="stylesheet">
+	<link href="./中台室内仿真模块_files/customwidget.css" rel="stylesheet">
+	<link href="./中台室内仿真模块_files/zTreeStyle.css" rel="stylesheet">
+	<link href="./中台室内仿真模块_files/bootstrap-table.min.css" rel="stylesheet">
+
+	<link href="./中台室内仿真模块_files/spinkit.min.css" rel="stylesheet">
+
+	<!-- Latest compiled and minified CSS -->
+	<!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.css"> -->
+
+	<script src="./中台室内仿真模块_files/shortCutKeys.js.下载"></script>
+	<script src="./中台室内仿真模块_files/localStorageUtils.js.下载"></script>
+	<script src="./中台室内仿真模块_files/area.js.下载"></script>
+	<script src="./中台室内仿真模块_files/EventEmitter.js.下载"></script>
+	<script src="./中台室内仿真模块_files/jquery-2.1.4.min.js.下载"></script>
+	<script src="./中台室内仿真模块_files/jquery.flip.min.js.下载"></script>
+	<script src="./中台室内仿真模块_files/dat.gui.min.js.下载"></script><style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;-o-transition:opacity .1s linear;-moz-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1 !important}.dg.main:hover .close-button,.dg.main .close-button.drag{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;-o-transition:opacity .1s linear;-moz-transition:opacity .1s linear;transition:opacity .1s linear;border:0;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button.close-top{position:relative}.dg.main .close-button.close-bottom{position:absolute}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-y:visible}.dg.a.has-save>ul.close-top{margin-top:0}.dg.a.has-save>ul.close-bottom{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{top:0;z-index:1002}.dg.a .save-row.close-top{position:relative}.dg.a .save-row.close-bottom{position:fixed}.dg li{-webkit-transition:height .1s ease-out;-o-transition:height .1s ease-out;-moz-transition:height .1s ease-out;transition:height .1s ease-out;-webkit-transition:overflow .1s linear;-o-transition:overflow .1s linear;-moz-transition:overflow .1s linear;transition:overflow .1s linear}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid rgba(0,0,0,0)}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px;overflow:hidden}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%;position:relative}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:7px}.dg .c select{margin-top:5px}.dg .cr.function,.dg .cr.function .property-name,.dg .cr.function *,.dg .cr.boolean,.dg .cr.boolean *{cursor:pointer}.dg .cr.color{overflow:visible}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0px 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco, monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px 'Lucida Grande', sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px 4px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2FA1D6}.dg .cr.number input[type=text]{color:#2FA1D6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.function:hover,.dg .cr.boolean:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2FA1D6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}
+</style><style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;-o-transition:opacity .1s linear;-moz-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1 !important}.dg.main:hover .close-button,.dg.main .close-button.drag{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;-o-transition:opacity .1s linear;-moz-transition:opacity .1s linear;transition:opacity .1s linear;border:0;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button.close-top{position:relative}.dg.main .close-button.close-bottom{position:absolute}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-y:visible}.dg.a.has-save>ul.close-top{margin-top:0}.dg.a.has-save>ul.close-bottom{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{top:0;z-index:1002}.dg.a .save-row.close-top{position:relative}.dg.a .save-row.close-bottom{position:fixed}.dg li{-webkit-transition:height .1s ease-out;-o-transition:height .1s ease-out;-moz-transition:height .1s ease-out;transition:height .1s ease-out;-webkit-transition:overflow .1s linear;-o-transition:overflow .1s linear;-moz-transition:overflow .1s linear;transition:overflow .1s linear}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid rgba(0,0,0,0)}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px;overflow:hidden}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%;position:relative}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:7px}.dg .c select{margin-top:5px}.dg .cr.function,.dg .cr.function .property-name,.dg .cr.function *,.dg .cr.boolean,.dg .cr.boolean *{cursor:pointer}.dg .cr.color{overflow:visible}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0px 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco, monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px 'Lucida Grande', sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px 4px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2FA1D6}.dg .cr.number input[type=text]{color:#2FA1D6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.function:hover,.dg .cr.boolean:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2FA1D6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}
+</style>
+	<script src="./中台室内仿真模块_files/quicksettings.min.js.下载"></script>
+	<script src="./中台室内仿真模块_files/bootstrap.min.js.下载"></script>
+	<script src="./中台室内仿真模块_files/xlsx.full.min.js.下载"></script>
+	<script src="./中台室内仿真模块_files/lodash.js.下载"></script>
+	<script src="./中台室内仿真模块_files/LineIntersect.js.下载"></script>
+	<script src="./中台室内仿真模块_files/dxf-parser.js.下载"></script>
+	<script src="./中台室内仿真模块_files/bootstrap-slider.min.js.下载"></script>
+	<script src="./中台室内仿真模块_files/point_in_polygon.js.下载"></script>
+	<script src="./中台室内仿真模块_files/image.js.下载"></script>
+	<script src="./中台室内仿真模块_files/bootstrap-table.min.js.下载"></script>
+	<script src="./中台室内仿真模块_files/bootstrap-table-zh-CN.min.js.下载"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<!-- <script src="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.js"></script> -->
+	<!-- Latest compiled and minified Locales -->
+	<!-- <script src="https://unpkg.com/bootstrap-table@1.17.1/dist/locale/bootstrap-table-zh-CN.min.js"></script> -->
+
+	<script src="./中台室内仿真模块_files/heatmap.js.下载"></script>
+
+	<script>
+		$.getJSON("/rundata/global/simulation1/antenna_pattern/antenna_patterns.json?" + new Date().getTime(), function (_antenna_patterns) {
+			antenna_patterns = Object.keys(_antenna_patterns);
+			antenna_pattern_map = _antenna_patterns;
+		});
+	</script>
+
+	<script src="./中台室内仿真模块_files/three.r98.js.下载"></script>
+	<script src="./中台室内仿真模块_files/d2d3js.js.下载"></script>
+	<!-- <script src="js/d2d3js.min.js"></script> -->
+	<script src="./中台室内仿真模块_files/items.js.下载"></script>
+	<script src="./中台室内仿真模块_files/items_gltf.js.下载"></script>
+	<script src="./中台室内仿真模块_files/floorbtns.js.下载"></script>
+	<script src="./中台室内仿真模块_files/DxfPlanner.js.下载"></script>
+	<script src="./中台室内仿真模块_files/app.js.下载"></script>
+	<script src="./中台室内仿真模块_files/customwidget.js.下载"></script>
+	<script src="./中台室内仿真模块_files/selectOrEditmodel.js.下载"></script>
+	<script src="./中台室内仿真模块_files/EditMate.js.下载"></script>
+	<script src="./中台室内仿真模块_files/EditAerial.js.下载"></script>
+	<script src="./中台室内仿真模块_files/terminal.js.下载"></script>
+	<script src="./中台室内仿真模块_files/jquery.ztree.all.min.js.下载"></script>
+	<script src="./中台室内仿真模块_files/colorPicker.min.js.下载"></script><style type="text/css">.ew-color-picker {
+    min-width: 320px;
+    position: absolute;
+    box-sizing: content-box;
+    border: 1px solid #ebeeff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    z-index: 10;
+    padding: 7px;
+    background-color: #ffffff;
+    display: none;
+    text-align: left;
+}
+
+.ew-color-picker .ew-color-picker-content:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.ew-color-picker-content {
+    margin-bottom: 6px;
+}
+
+.ew-color-panel {
+    position: relative;
+    width: 280px;
+    height: 180px;
+    cursor: pointer;
+}
+
+.ew-color-white-panel,
+.ew-color-black-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.ew-color-white-panel {
+    background: linear-gradient(90deg, #fff, hsla(0, 0%, 100%, 0));
+}
+
+.ew-color-black-panel {
+    background: linear-gradient(0deg, #000, transparent);
+}
+
+.ew-color-slider {
+    width: 27px;
+    height: 180px;
+    position: relative;
+    float: right;
+    box-sizing: border-box;
+}
+.ew-color-slider-bar {
+    background: linear-gradient(180deg, #f00 0, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00);
+    margin-left: 3px;
+}
+.ew-alpha-slider-bar,.ew-color-slider-bar{
+    width: 12px;
+    height: 100%;
+    position: relative;
+    float: left;
+    cursor: pointer;
+}
+.ew-alpha-slider-wrapper{
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==");
+}
+.ew-alpha-slider-bg,.ew-alpha-slider-wrapper{
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+.ew-color-slider-thumb,.ew-alpha-slider-thumb {
+    position: absolute;
+    cursor: pointer;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 4px;
+    border-radius: 1px;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .6);
+}
+
+.ew-color-cursor{
+    position: absolute;
+    left: 100%;
+    top: 0%;
+    cursor: default;
+    width: 4px;
+    height: 4px;
+    transform: translate(-2px, -2px);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #fff,
+        inset 0 0 2px 2px rgba(0, 0, 0, .4),
+        0 0 2px 3px rgba(0, 0, 0, .5);
+    transform: translate(-6px,-6px)
+}
+
+.ew-color-dropbtns {
+    margin-top: 6px;
+    position: relative;
+}
+
+.ew-color-input {
+    width: 160px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #dcdfe6;
+    background-color: #ffffff;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 5px;
+    transition: border-color .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 5px;
+    outline: none;
+}
+
+.ew-color-input:focus {
+    border-color: #239fe6;
+}
+
+.ew-color-dropbtn {
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    transition: .1s;
+    font-weight: 500;
+    outline: none;
+    box-sizing: border-box;
+    margin: 0;
+    white-space: nowrap;
+    color: #606266;
+    border: 1px solid #dcdfe6;
+}
+
+.ew-color-dropbtngroup {
+    position: absolute;
+    right: 0;
+    top: 1px;
+}
+
+.ew-color-clear {
+    display: none;
+    color: #4096ef;
+    border-color: transparent;
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ew-color-clear:hover,
+.ew-color-clear:active {
+    color: #66b1ff;
+}
+
+.ew-color-sure {
+    background-color: #ffffff;
+    margin-left: 0px;
+}
+
+.ew-color-sure:hover,
+.ew-color-sure:active {
+    border-color: #4096ef;
+    color: #4096ef;
+}
+.ew-pre-define-color-container{
+    width: 280px;
+    font-size: 12px;
+    margin-top: 8px;
+}
+.ew-pre-define-color-container:after{
+    content: "";
+    visibility: hidden;
+    clear: both;
+    display: block;
+    height: 0;
+}
+.ew-pre-define-color{
+    float: left;
+    margin: 0 0 8px 8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid #9b979b;
+}
+.ew-pre-define-color:nth-child(10n+1){
+    margin-left: 0;
+}
+.ew-pre-define-color:hover,
+.ew-pre-define-color:active{
+    opacity: .8;
+}
+.ew-pre-define-color-active{
+    box-shadow: 0 0 3px 2px #409eff;
+}
+.ew-color-picker-box{
+    border: 1px solid #dcdee2;
+    color: #535353;
+    outline: none;
+    display: inline-block;
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 4px;
+    padding: 4px 7px;
+    line-height: 1.5;
+    cursor: pointer;
+    font-size: 14px;
+    transition: border-color  .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.ew-color-picker-box-disabled{
+    background-color: #c4c2c2;
+    cursor: not-allowed;
+}
+.ew-color-picker-arrow,.ew-color-picker-no{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 3;
+}
+.ew-color-picker-no{
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 40px;
+    color: #5e535f;
+    border: 1px solid #5e535f;
+    border-radius: 2px;
+}
+.ew-color-picker-arrow-left,.ew-color-picker-arrow-right{
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    overflow: hidden;
+    border-bottom: 10px transparent dashed;
+    border-left: 10px transparent dashed;
+    border-right: 10px transparent dashed;
+    border-top: 10px #fff solid;
+}
+.ew-color-picker-arrow-left{
+    border-top: 10px solid #fff;
+}</style>
+	<script src="./中台室内仿真模块_files/echarts.min.js.下载"></script>
+	<script src="./中台室内仿真模块_files/echarts-gl.min.js.下载"></script>
+	<script src="./中台室内仿真模块_files/xiaoquManagement.js.下载"></script>
+	<script src="./中台室内仿真模块_files/yewuManagement.js.下载"></script>
+	<script src="./中台室内仿真模块_files/capacitySimulation.js.下载"></script>
+</head>
+
+<body class="modal-open">
+	<div id="floor-indicator-container" style="position: fixed; left: 100px; top: 35vh;z-index: 100;display: flex;flex-flow: column wrap;">
+	</div>
+	<div id="header">
+		<span style="color: white; font-size: 16px;"><strong>中台室内仿真模块</strong></span>
+	</div>
+	<div id="menu-left">
+		<div id="menu-left-content">
+			<span class="icon iconfont icon-paper" title="导入图纸" data-toggle="modal" data-target="#import-paper-modal"></span>
+			<span class="icon iconfont icon-cad" title="导入CAD" data-toggle="modal" data-target="#import-cad-modal"></span>
+			<!-- <span class="icon iconfont icon-modal" title="导入模型" data-toggle="modal" data-target="#add-items-modal"></span> -->
+			<span class="icon iconfont icon-modal" title="模型管理" data-toggle="modal" data-target="#model-management-modal"></span>
+
+			<span class="icon iconfont icon-wenli" title="材质管理" data-toggle="modal" data-target="#mate-management-modal"></span>
+
+			<span class="icon iconfont icon-tianxian" title="天线管理" data-toggle="modal" data-target="#aerial-edit"></span>
+
+			<span class="icon iconfont icon-xiaoquguanli" title="小区管理" data-toggle="modal" data-target="#xiaoqu-management"></span>
+			<span class="icon iconfont icon-yewuguanli" title="业务管理" data-toggle="modal" data-target="#yewu-management"></span>
+
+			<span class="icon iconfont icon-tree-select" title="图层管理" id="layerManagement"></span>
+		</div>
+	</div>
+	<div id="layer-management-container" class="hidden" style="overflow: auto;">
+		<ul id="regionZTree" class="ztree"><li id="regionZTree_1" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="regionZTree_1_switch" title="" class="button level0 switch roots_open" treenode_switch=""></span><a id="regionZTree_1_a" class="level0" treenode_a="" onclick="" target="_blank" style="color:black;font-weight:bold;" title="建模"><span id="regionZTree_1_ico" title="" treenode_ico="" class="button ico_open" style="display:none;"></span><span id="regionZTree_1_span" class="node_name">建模</span></a><ul id="regionZTree_1_ul" class="level0 line" style="display:block"><li id="regionZTree_2" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="regionZTree_2_switch" title="" class="button level1 switch center_close" treenode_switch=""></span><a id="regionZTree_2_a" class="level1" treenode_a="" onclick="" target="_blank" style="color:black;font-weight:bold;" title="地板"><span id="regionZTree_2_ico" title="" treenode_ico="" class="button ico_close" style="display:none;"></span><span id="regionZTree_2_span" class="node_name">地板</span></a></li><li id="regionZTree_4" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="regionZTree_4_switch" title="" class="button level1 switch center_close" treenode_switch=""></span><a id="regionZTree_4_a" class="level1" treenode_a="" onclick="" target="_blank" style="color:black;font-weight:bold;" title="墙体"><span id="regionZTree_4_ico" title="" treenode_ico="" class="button ico_close" style="display:none;"></span><span id="regionZTree_4_span" class="node_name">墙体</span></a></li><li id="regionZTree_11" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="regionZTree_11_switch" title="" class="button level1 switch bottom_close withoutIcon" treenode_switch=""></span><a id="regionZTree_11_a" class="level1" treenode_a="" onclick="" target="_blank" style="color:black;font-weight:bold;" title="天花板"><span id="regionZTree_11_ico" title="" treenode_ico="" class="button ico_close" style="display:none;"></span><span id="regionZTree_11_span" class="node_name">天花板</span></a></li></ul></li><li id="regionZTree_12" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="regionZTree_12_switch" title="" class="button level0 switch center_open" treenode_switch=""></span><a id="regionZTree_12_a" class="level0" treenode_a="" onclick="" target="_blank" style="color:black;font-weight:bold;" title="仿真"><span id="regionZTree_12_ico" title="" treenode_ico="" class="button ico_open" style="display:none;"></span><span id="regionZTree_12_span" class="node_name">仿真</span></a><ul id="regionZTree_12_ul" class="level0 line" style="display:block"><li id="regionZTree_13" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="regionZTree_13_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><a id="regionZTree_13_a" class="level1" treenode_a="" onclick="" target="_blank" style="color:black;font-weight:bold;" title="覆盖预测"><span id="regionZTree_13_ico" title="" treenode_ico="" class="button ico_open" style="display:none;"></span><span id="regionZTree_13_span" class="node_name">覆盖预测</span><span id="diyBtn_space_undefined" class="icon iconfont icon-statistics" style="color:#187bbe" title="统计" data-toggle="modal" data-level="undefined" data-type="undefined" data-target="#simulation-heatmap-total">
+        </span></a><ul id="regionZTree_13_ul" class="level1 line" style="display:block"><li id="regionZTree_14" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="regionZTree_14_switch" title="" class="button level2 switch center_open" treenode_switch=""></span><a id="regionZTree_14_a" class="level2" treenode_a="" onclick="" target="_blank" style="color:black;font-weight:bold;" title="RSRP"><span id="regionZTree_14_ico" title="" treenode_ico="" class="button ico_open" style="display:none;"></span><span id="regionZTree_14_span" class="node_name">RSRP</span></a><ul id="regionZTree_14_ul" class="level2 line" style="display:block"><li id="regionZTree_15" class="level3" tabindex="0" hidefocus="true" treenode=""><span id="regionZTree_15_switch" title="" class="button level3 switch bottom_close withoutIcon" treenode_switch=""></span><a id="regionZTree_15_a" class="level3" treenode_a="" onclick="" target="_blank" style="color:black;font-weight:bold;" title="栅格"><span id="regionZTree_15_ico" title="" treenode_ico="" class="button ico_close" style="display:none;"></span><span id="regionZTree_15_span" class="node_name">栅格</span></a></li></ul></li><li id="regionZTree_16" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="regionZTree_16_switch" title="" class="button level2 switch bottom_open" treenode_switch=""></span><a id="regionZTree_16_a" class="level2" treenode_a="" onclick="" target="_blank" style="color:black;font-weight:bold;" title="SINR"><span id="regionZTree_16_ico" title="" treenode_ico="" class="button ico_open" style="display:none;"></span><span id="regionZTree_16_span" class="node_name">SINR</span></a><ul id="regionZTree_16_ul" class="level2 " style="display:block"><li id="regionZTree_17" class="level3" tabindex="0" hidefocus="true" treenode=""><span id="regionZTree_17_switch" title="" class="button level3 switch bottom_close withoutIcon" treenode_switch=""></span><a id="regionZTree_17_a" class="level3" treenode_a="" onclick="" target="_blank" style="color:black;font-weight:bold;" title="栅格"><span id="regionZTree_17_ico" title="" treenode_ico="" class="button ico_close" style="display:none;"></span><span id="regionZTree_17_span" class="node_name">栅格</span></a></li></ul></li></ul></li><li id="regionZTree_18" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="regionZTree_18_switch" title="" class="button level1 switch bottom_close" treenode_switch=""></span><a id="regionZTree_18_a" class="level1" treenode_a="" onclick="" target="_blank" style="color:black;font-weight:bold;" title="容量仿真"><span id="regionZTree_18_ico" title="" treenode_ico="" class="button ico_close" style="display:none;"></span><span id="regionZTree_18_span" class="node_name">容量仿真</span><span id="diyBtn_space_undefined" class="icon iconfont icon-statistics" style="color:#187bbe" title="统计" data-toggle="modal" data-target="#simulation-ue-total">
+        </span></a></li></ul></li><li id="regionZTree_24" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="regionZTree_24_switch" title="" class="button level0 switch center_close" treenode_switch=""></span><a id="regionZTree_24_a" class="level0" treenode_a="" onclick="" target="_blank" style="color:black;font-weight:bold;" title="校正"><span id="regionZTree_24_ico" title="" treenode_ico="" class="button ico_close" style="display:none;"></span><span id="regionZTree_24_span" class="node_name">校正</span></a></li><li id="regionZTree_26" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="regionZTree_26_switch" title="" class="button level0 switch bottom_close" treenode_switch=""></span><a id="regionZTree_26_a" class="level0" treenode_a="" onclick="" target="_blank" style="color:black;font-weight:bold;" title="多径"><span id="regionZTree_26_ico" title="" treenode_ico="" class="button ico_close" style="display:none;"></span><span id="regionZTree_26_span" class="node_name">多径</span></a></li></ul>
+	</div>
+	<div id="header-menu">
+		<div id="header-menu-content">
+			<div class="header-nav">
+				<!-- <span>中台室内仿真模块</span> -->
+				<ul id="header-nav-container">
+					<li id="header-nav-project" class="header-nav-item select">工程</li>
+					<li id="header-nav-modal" class="header-nav-item hidden">模型</li>
+					<li id="header-nav-draw" class="header-nav-item">绘制</li>
+					<li id="header-nav-simulation" class="header-nav-item">仿真</li>
+					<li id="header-nav-check" class="header-nav-item">校正</li>
+				</ul>
+			</div>
+			<div class="header-actions">
+				<div id="header-actions-project" class="header-actions-container">
+					<div class="custom-button-info header-big-btn hidden" data-toggle="modal" data-target="#new-project-modal">
+						<span class="header-big-btn-icon icon iconfont icon-add"></span>
+						<div>新建工程</div>
+					</div>
+					<input type="file" style="display: none;" id="loadMultiFloorFile2d">
+					<div class="custom-button-info header-big-btn" onclick="$(&#39;#loadMultiFloorFile2d&#39;).click()">
+						<span class="header-big-btn-icon icon iconfont icon-open"></span>
+						<div>导入工程</div>
+					</div>
+					<div class="custom-button-info header-big-btn" id="saveMultiFloorFile">
+						<span class="header-big-btn-icon icon iconfont icon-save"></span>
+						<div>导出工程</div>
+					</div>
+					<div class="custom-button-info header-big-btn hidden" data-toggle="modal" data-target="#edit-project-modal">
+						<span class="header-big-btn-icon icon iconfont icon-shuxing"></span>
+						<div>工程属性</div>
+					</div>
+				</div>
+				<div id="header-actions-modal" class="header-actions-container hidden">
+					<!-- <div class="custom-button-info header-big-btn" data-toggle="modal" data-target="#import-paper-modal">
+						<span class="header-big-btn-icon icon iconfont icon-paper"></span>
+						<div>导入图纸</div>
+					</div>
+					<div class="custom-button-info header-big-btn" data-toggle="modal" data-target="#import-cad-modal">
+						<span class="header-big-btn-icon icon iconfont icon-cad"></span>
+						<div>导入CAD</div>
+					</div> -->
+					<div class="custom-button-info header-big-btn" data-toggle="modal" data-target="#model-management-modal">
+						<span class="header-big-btn-icon icon iconfont icon-modal-manager"></span>
+						<div>模型管理</div>
+					</div>
+				</div>
+				<div id="header-actions-draw" class="header-actions-container hidden">
+					<div class="custom-button-info header-big-btn" id="switch2d3d">
+						<span class="header-big-btn-icon icon iconfont icon-2d"></span>
+						<div>二维/三维</div>
+					</div>
+					<span style="width: 1px; height: 48px; background-color: var(--main-light-2-color);"></span>
+
+					<div class="btn-group d2-opare-tools" style="display: flex; flex-flow: row nowrap;">
+						<div class="custom-button-info header-big-btn" id="drawWall">
+							<span class="header-big-btn-icon icon iconfont icon-wall"></span>
+							<div id="wall-texture-desc">混凝土墙</div>
+						</div>
+						<button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: 1px solid lightgray; border-radius: 2px; background-color: white; padding: 3px;">
+							<span class="caret"></span>
+							<span class="sr-only">Toggle Dropdown</span>
+						</button>
+						<ul class="dropdown-menu" id="wall-texture">
+							<li class="wall-texture-item" id="concrete"><a href="http://47.93.20.191:10001/project.html?pid=0#">混凝土</a></li>
+							<li class="wall-texture-item" id="metal"><a href="http://47.93.20.191:10001/project.html?pid=0#">金属</a></li>
+							<li class="wall-texture-item" id="plaster"><a href="http://47.93.20.191:10001/project.html?pid=0#">石膏</a></li>
+							<li class="wall-texture-item" id="wood"><a href="http://47.93.20.191:10001/project.html?pid=0#">木质</a></li>
+							<li class="wall-texture-item" id="glass"><a href="http://47.93.20.191:10001/project.html?pid=0#">玻璃</a></li>
+						</ul>
+					</div>
+
+
+					<div class="d2-opare-tools custom-button-info header-big-btn" id="drawFloor">
+						<span class="header-big-btn-icon icon iconfont icon-floor"></span>
+						<div>地板</div>
+					</div>
+					<div class="d2-opare-tools custom-button-info header-big-btn" id="drawFloorHoles">
+						<span class="header-big-btn-icon icon iconfont icon-floor"></span>
+						<div>地板镂空</div>
+					</div>
+					<div class="d2-opare-tools custom-button-info header-big-btn" id="drawRoof">
+						<span class="header-big-btn-icon icon iconfont icon-roof"></span>
+						<div>天花板</div>
+					</div>
+
+					<span style="width: 1px; height: 48px; background-color: var(--main-light-2-color);"></span>
+
+					<div class="d2-opare-tools custom-button-info header-big-btn" id="drawScale">
+						<span class="header-big-btn-icon icon iconfont icon-bilichi"></span>
+						<div>比例尺</div>
+					</div>
+					<!-- <div class="custom-button-info header-big-btn" data-toggle="modal" data-target="#add-items-modal">
+						<span class="header-big-btn-icon icon iconfont icon-modal"></span>
+						<div>模型</div>
+					</div> -->
+					<div class="d2-opare-tools flex-up-down" style="margin: 0 4px;">
+						<div class="header-small-btn custom-button-primary" id="moveWall">
+							<span class="glyphicon glyphicon-hand-up">&nbsp;<span>移动</span>
+						</span></div>
+						<div class="header-small-btn custom-button-primary" id="removeWall">
+							<span class="glyphicon glyphicon-trash">&nbsp;<span>删除</span>
+						</span></div>
+					</div>
+					<!-- <div class="d2-opare-tools flex-up-down" style="margin: 0 4px;">
+						<div class="header-small-btn custom-button-primary">
+							<span class="glyphicon glyphicon-copy" />&nbsp;<span>复制</span>
+						</div>
+						<div class="header-small-btn custom-button-primary">
+							<span class="glyphicon glyphicon-hand-up" />&nbsp;<span>选择</span>
+						</div>
+					</div> -->
+					<div class="d2-opare-tools flex-left-right" style="width: 100px;">
+						<div class="custom-button-primary" style="width: 20px; height: 20px; border-radius: 10px;">
+							<span class="glyphicon glyphicon-minus" id="scale-minus-btn">
+						</span></div>
+						<div class="flex-up-down" style="width: 50px;">
+							<span id="scale-info" style="text-align: center; color: var(--main-light-1-color); font-size: 14px;">20%</span>
+						</div>
+						<div class="custom-button-primary" style="width: 20px; height: 20px; border-radius: 10px;">
+							<span class="glyphicon glyphicon-plus" id="scale-plus-btn">
+						</span></div>
+					</div>
+					<div class="d2-opare-tools flex-up-down" style="margin: 0 4px; align-items: left;">
+						<div class="pretty p-default" style="margin-top: 0px; color: var(--main-light-1-color);">
+							<input type="checkbox" id="showGridCheckBox">
+							<div class="state p-primary">
+								<label>显示网格</label>
+							</div>
+						</div>
+						<div class="pretty p-default" style="margin-top: 15px; color: var(--main-light-1-color);">
+							<input type="checkbox" id="showWallLabelCheckBox">
+							<div class="state p-primary">
+								<label>显示长度</label>
+							</div>
+						</div>
+					</div>
+					<div class="d3-opare-tools flex-up-down hidden" style="margin: 0 4px; align-items: left;">
+						<div class="pretty p-default" style="margin-top: 0px; color: var(--main-light-1-color);">
+							<input type="checkbox" id="showSLineCheckBox">
+							<div class="state p-primary">
+								<label>显示多径</label>
+							</div>
+						</div>
+					</div>
+					<span style="width: 1px; height: 48px; background-color: var(--main-light-2-color);"></span>
+					<div class="d2-opare-tools custom-button-info header-big-btn" id="newFloor">
+						<span class="header-big-btn-icon icon iconfont icon-add"></span>
+						<div>新建楼层</div>
+					</div>
+					<div class="d2-opare-tools custom-button-info header-big-btn" id="removeFloor">
+						<span class="header-big-btn-icon icon iconfont icon-trash"></span>
+						<div>删除楼层</div>
+					</div>
+					<div class="custom-button-info header-big-btn" id="displayAll">
+						<span class="header-big-btn-icon icon iconfont icon-show-all"></span>
+						<div>全部显示</div>
+					</div>
+					<div class="flex-up-down" style="margin: 0 4px;">
+						<div class="header-small-btn custom-button-primary" id="goHeadFloor">
+							<span class="glyphicon glyphicon-arrow-up"><span>上一层</span>
+						</span></div>
+						<div class="header-small-btn custom-button-primary" id="goNextFloor">
+							<span class="glyphicon glyphicon-arrow-down"><span>下一层</span>
+						</span></div>
+					</div>
+					<div>
+						<span id="floor-msg">当前1层，共1层</span>
+					</div>
+				</div>
+				<div id="header-actions-simulation" class="header-actions-container hidden">
+					<div class="custom-button-info header-big-btn hidden" id="importSGridDataNew">
+						<span class="header-big-btn-icon icon iconfont icon-up"></span>
+						<div>覆盖导入</div>
+					</div>
+					<div class="custom-button-info header-big-btn  hidden" id="importSGrid2DataNew">
+						<span class="header-big-btn-icon icon iconfont icon-up"></span>
+						<div>容量导入</div>
+					</div>
+					<div class="custom-button-info header-big-btn  hidden" id="exportSGridDataNew">
+						<span class="header-big-btn-icon icon iconfont icon-down"></span>
+						<div>下载结果</div>
+					</div>
+					<div class="flex-up-down" style="margin: 0 4px;">
+						<div class="header-small-btn custom-button-primary" id="fixedAddTerminalBtn">
+							<span class="glyphicon glyphicon-pushpin">&nbsp;<span>固定</span>
+						</span></div>
+						<div class="header-small-btn custom-button-primary" id="linkAddTerminalBtn">
+							<span class="glyphicon glyphicon-map-marker">&nbsp;<span>路径</span>
+						</span></div>
+					</div>
+					<div class="flex-up-down hidden" style="margin: 0 4px;">
+						<div class="header-small-btn custom-button-primary">
+							<span class="glyphicon glyphicon-hand-up">&nbsp;<span>随机</span>
+						</span></div>
+						<div class="header-small-btn custom-button-primary">
+							<span class="glyphicon glyphicon-trash">&nbsp;<span>删除</span>
+						</span></div>
+					</div>
+					<div class="custom-button-info header-big-btn" id="simulate1Btn" data-toggle="modal" data-target="#simulate1-modal">
+						<span class="header-big-btn-icon icon iconfont icon-quanmianfugai"></span>
+						<div>覆盖预测</div>
+					</div>
+					<div class="custom-button-info header-big-btn" id="simulate2Btn" data-toggle="modal" data-target="#simulate2-modal">
+						<span class="header-big-btn-icon icon iconfont icon-scucunchurongliangdanweibao"></span>
+						<div>容量仿真</div>
+					</div>
+					<div class="custom-button-info header-big-btn" id="simulate2AutoBtn" data-toggle="modal" data-target="#simulate2-auto-modal">
+						<span class="header-big-btn-icon icon iconfont icon-scucunchurongliangdanweibao"></span>
+						<div>自动布站</div>
+					</div>
+				</div>
+				<div id="header-actions-check" class="header-actions-container hidden">
+					<div class="custom-button-info header-big-btn" id="drawAnchor">
+						<span class="header-big-btn-icon icon iconfont icon-modal"></span>
+						<div>锚点</div>
+					</div>
+					<div class="custom-button-info header-big-btn" id="drawBS">
+						<span class="header-big-btn-icon icon iconfont icon-tianxian"></span>
+						<div>发射源</div>
+					</div>
+					<div class="custom-button-info header-big-btn" id="saveToPng2d">
+						<span class="header-big-btn-icon icon iconfont icon-wenli"></span>
+						<div>保存图片</div>
+					</div>
+					<span style="width: 1px; height: 48px; background-color: var(--main-light-2-color);"></span>
+					<div class="custom-button-info header-big-btn" id="importSCheckData">
+						<span class="header-big-btn-icon icon iconfont icon-up"></span>
+						<div>校正导入</div>
+					</div>
+					<div class="custom-button-info header-big-btn" id="checkRunBtn" data-toggle="modal" data-target="#simulate3-modal">
+						<span class="header-big-btn-icon icon iconfont icon-scucunchurongliangdanweibao"></span>
+						<div>校正执行</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="display: flex;flex-flow: row wrap;justify-content: center; align-items: center;height: 20px;">
+			<div id="header-menu-zoom" class="custom-button-primary">
+				<span class="glyphicon glyphicon-chevron-up">
+			</span></div>
+		</div>
+	</div>
+	<div id="menu-right">
+		<div style="width: 20px;display: flex;flex-flow: row wrap;justify-content: center; align-items: center;">
+			<div id="menu-right-zoom" class="custom-button-primary hidden">
+				<span class="glyphicon glyphicon-chevron-right">
+			</span></div>
+		</div>
+		<div id="menu-right-content" class="Common-scrollbar">
+			<div class="custom-dropdown-container hidden">
+				<div class="custom-dropdown-header">
+					<span class="custom-dropdown-header-title">公共属性</span>
+					<span class="custom-dropdown-header-icon glyphicon glyphicon-chevron-down hidden">
+				</span></div>
+				<div class="custom-dropdown-content">
+					<div class="custom-item">
+						<span class="custom-item-label" for="length-unit">单位:</span>
+						<select class="custom-item-content custom-select" id="length-unit">
+							<option value="a">英尺</option>
+							<option value="b">英寸</option>
+							<option value="e" selected="selected">米</option>
+							<option value="c">厘米</option>
+							<option value="d">毫米</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="custom-dropdown-container hidden" id="property-2d-container">
+				<div class="custom-dropdown-header">
+					<span class="custom-dropdown-header-title">二维属性</span>
+					<span class="custom-dropdown-header-icon glyphicon glyphicon-chevron-down hidden">
+				</span></div>
+				<div class="custom-dropdown-content">
+					<div class="custom-item hidden" id="item-wall-type">
+						<span class="custom-item-label" for="wall-type">类型:</span>
+						<select class="custom-item-content custom-select" id="wall-type">
+							<option value="Straight">直面</option>
+							<option value="Curved">曲面</option>
+						</select>
+					</div>
+					<div class="custom-item hidden" id="item-wall-length">
+						<span class="custom-item-label">长度:</span>
+						<input id="property-wall-length" class="custom-item-content custom-input" type="number" placeholder="请输入长度">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">对齐网格:</span>
+						<input class="custom-item-content custom-switch" type="checkbox">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">网格大小:</span>
+						<input id="property-grid-size" class="custom-item-content custom-input" type="number" placeholder="请输入大小" oninput="value=value.replace(/[^\d]/g,&#39;&#39;)">
+					</div>
+				</div>
+			</div>
+			<div class="custom-dropdown-container hidden" id="property-3d-container">
+				<div class="custom-dropdown-header">
+					<span class="custom-dropdown-header-title">三维属性</span>
+					<span class="custom-dropdown-header-icon glyphicon glyphicon-chevron-down hidden">
+				</span></div>
+				<div class="custom-dropdown-content">
+					<div class="custom-item hidden" id="item-wall-height">
+						<span class="custom-item-label">墙高(米):</span>
+						<input id="property-wall-height" class="custom-item-content custom-input" type="number" placeholder="请输入墙高" oninput="value=value.replace(/[^\d]/g,&#39;&#39;)">
+					</div>
+					<div class="custom-item hidden" id="item-select-all-wall">
+						<span class="custom-item-label">所有墙:</span>
+						<input id="property-select-all-wall" class="custom-item-content custom-switch" type="checkbox">
+					</div>
+					<div class="custom-item hidden" id="item-wall-floor-material">
+						<span class="custom-item-label" for="wall-type">材料:</span>
+						<select class="custom-item-content custom-select" id="wall-floor-material">
+							<option value="0">混凝土</option>
+							<option value="1">金属</option>
+							<option value="2">石膏</option>
+							<option value="3">木质</option>
+							<option value="4">玻璃</option>
+						</select>
+					</div>
+					<div class="custom-item hidden">
+						<span class="custom-item-label">锁定摄像机:</span>
+						<input id="property-lock-camera" class="custom-item-content custom-switch" type="checkbox">
+					</div>
+					<div class="custom-item hidden">
+						<div id="property-reset-camera" class="custom-button-primary" style="width: 80px;height: 20px;">
+							<span>重置摄像机</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="custom-dropdown-container hidden">
+				<div class="custom-dropdown-header">
+					<span class="custom-dropdown-header-title">仿真属性</span>
+					<span class="custom-dropdown-header-icon glyphicon glyphicon-chevron-down hidden">
+				</span></div>
+				<div class="custom-dropdown-content">
+					<div class="custom-item">
+						<span class="custom-item-label" for="floor">栅格显示:</span>
+						<select class="custom-item-content custom-select" id="floor">
+							<option>一层</option>
+							<option>二层</option>
+						</select>
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">当前栅格ID:</span>
+						<input class="custom-item-content custom-input" type="text" placeholder="Username">
+					</div>
+				</div>
+			</div>
+			<div class="custom-dropdown-container hidden" id="property-form">
+				<div class="custom-dropdown-header">
+					<span class="custom-dropdown-header-title">当前选中:<span id="property-form-title">天线</span></span>
+					<span class="glyphicon glyphicon-remove" style="color: white; cursor: pointer;" onclick="$(&#39;#property-form&#39;).addClass(&#39;hidden&#39;)">
+						<span class="custom-dropdown-header-icon glyphicon glyphicon-chevron-down hidden">
+				</span></span></div>
+
+				<div class="custom-dropdown-content hidden" id="walls-property-form">
+					<div class="custom-item">
+						<span class="custom-item-label">高度(米):</span>
+						<input id="property-form-height" type="number" class="custom-item-content custom-input" value="0">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label" for="length-unit">材质:</span>
+						<select class="custom-item-content custom-select" id="property-form-mate">
+							<option value="concrete">混凝土</option>
+							<option value="plaster">石膏</option>
+							<option value="metal">金属</option>
+							<option value="glass">玻璃</option>
+							<option value="wood">木质</option>
+						</select>
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<div id="property-form-delete" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>删除</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="custom-dropdown-content hidden" id="floor-property-form">
+					<div class="custom-item">
+						<span class="custom-item-label" for="length-unit">材质:</span>
+						<select class="custom-item-content custom-select" id="property-form-mate">
+							<option value="concrete">混凝土</option>
+							<option value="plaster">石膏</option>
+							<option value="metal">金属</option>
+							<option value="glass">玻璃</option>
+							<option value="wood">木质</option>
+						</select>
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<div id="property-form-delete" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>删除</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="custom-dropdown-content hidden" id="roof-property-form">
+					<div class="custom-item">
+						<span class="custom-item-label">高度(米):</span>
+						<input id="property-form-height" type="number" class="custom-item-content custom-input" value="0">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label" for="length-unit">材质:</span>
+						<select class="custom-item-content custom-select" id="property-form-mate">
+							<option value="concrete">混凝土</option>
+							<option value="plaster">石膏</option>
+							<option value="metal">金属</option>
+							<option value="glass">玻璃</option>
+							<option value="wood">木质</option>
+						</select>
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<div id="property-form-delete" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>删除</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="custom-dropdown-content hidden" id="wall-2d-property-form">
+					<div class="custom-item">
+						<span class="custom-item-label" for="property-form-walltype">类型:</span>
+						<select class="custom-item-content custom-select" id="property-form-walltype">
+							<option value="Straight">直线</option>
+							<option value="Curved">曲线</option>
+						</select>
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label" for="property-form-mate">材质:</span>
+						<select class="custom-item-content custom-select" id="property-form-mate">
+							<option value="concrete">混凝土</option>
+							<option value="plaster">石膏</option>
+							<option value="metal">金属</option>
+							<option value="glass">玻璃</option>
+							<option value="wood">木质</option>
+						</select>
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<span class="custom-item-label">长度(米):</span>
+						<input id="property-form-length" type="number" class="custom-item-content custom-input" value="0">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">高度(米):</span>
+						<input id="property-form-height" type="number" class="custom-item-content custom-input" value="0">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">悬空(米):</span>
+						<input id="property-form-baseline" type="number" class="custom-item-content custom-input" value="0">
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<div id="property-form-rotat" class="custom-button-primary" style="width: 80px;height: 20px;">
+							<span>旋转</span>
+						</div>
+						<div id="property-form-save" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>保存</span>
+						</div>
+						<div id="property-form-delete" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>删除</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="custom-dropdown-content hidden" id="wall-scale-property-form">
+					<div class="custom-item">
+						<span class="custom-item-label">实际长度(米):</span>
+						<input id="property-form-length" type="number" class="custom-item-content custom-input" value="0">
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<div id="property-form-save" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>保存</span>
+						</div>
+						<div id="property-form-delete" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>删除</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="custom-dropdown-content hidden" id="wall-3d-property-form">
+					<div class="custom-item">
+						<span class="custom-item-label" for="property-form-mate">材质:</span>
+						<select class="custom-item-content custom-select" id="property-form-mate">
+							<option value="concrete">混凝土</option>
+							<option value="plaster">石膏</option>
+							<option value="metal">金属</option>
+							<option value="glass">玻璃</option>
+							<option value="wood">木质</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="custom-dropdown-content hidden" id="corner-property-form">
+					<div class="custom-item">
+						<span class="custom-item-label">X轴(米):</span>
+						<input id="property-form-x" type="float" class="custom-item-content custom-input" value="0">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">Y轴(米):</span>
+						<input id="property-form-y" type="float" class="custom-item-content custom-input" value="0">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">高度(米):</span>
+						<input id="property-form-height" type="float" class="custom-item-content custom-input" value="0">
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<div id="property-form-save" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>保存</span>
+						</div>
+						<div id="property-form-delete" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>删除</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="custom-dropdown-content hidden" id="model-property-form">
+					<div class="custom-item">
+						<span class="custom-item-label">模型:</span>
+						<input id="property-form-name" class="custom-item-content custom-input" type="text" placeholder="name" readonly="">
+					</div>
+
+					<div class="custom-item hidden">
+						<span class="custom-item-label" for="property-form-mate">材质:</span>
+						<select class="custom-item-content custom-select" id="property-form-mate">
+							<option value="concrete">混凝土</option>
+							<option value="plaster">石膏</option>
+							<option value="metal">金属</option>
+							<option value="glass">玻璃</option>
+							<option value="wood">木质</option>
+						</select>
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<span class="custom-item-label">X轴(米):</span>
+						<input id="property-form-x" type="float" class="custom-item-content custom-input" value="0" placeholder="X轴">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">Y轴(米):</span>
+						<input id="property-form-y" type="float" class="custom-item-content custom-input" value="0" placeholder="Y轴">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">Z轴(米):</span>
+						<input id="property-form-z" type="float" class="custom-item-content custom-input" value="0" placeholder="Z轴">
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<span class="custom-item-label">宽度(米):</span>
+						<input id="property-form-width" type="number" class="custom-item-content custom-input" value="0" placeholder="宽度">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">深度(米):</span>
+						<input id="property-form-depth" type="number" class="custom-item-content custom-input" value="0" placeholder="深度">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">高度(米):</span>
+						<input id="property-form-height" type="number" class="custom-item-content custom-input" value="0" placeholder="高度">
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<div id="property-form-save" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>保存</span>
+						</div>
+						<div id="property-form-delete" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>删除</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="custom-dropdown-content" id="base-property-form">
+					<div class="custom-item">
+						<span class="custom-item-label">天线:</span>
+						<input id="property-form-name" class="custom-item-content custom-input" type="text" placeholder="name" readonly="">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">小区ID:</span>
+						<input id="property-form-cellid" type="number" class="custom-item-content custom-input" value="0" placeholder="小区ID">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">天线ID:</span>
+						<input id="property-form-txid" type="number" class="custom-item-content custom-input" value="0" placeholder="天线ID">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">发射功率(dbm):</span>
+						<input id="property-form-power" type="number" class="custom-item-content custom-input" value="0" placeholder="发射功率">
+					</div>
+					`
+					<hr class="solid">
+					<div class="custom-item">
+						<span class="custom-item-label">方向角:</span>
+						<input id="property-form-ant_azimuth" type="number" class="custom-item-content custom-input" value="0" placeholder="方向角">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">下倾角:</span>
+						<input id="property-form-ant_elevation" type="number" class="custom-item-content custom-input" value="0" placeholder="下倾角">
+					</div>
+					<!-- <div class="custom-item">
+						<span class="custom-item-label">索引:</span>
+						<select id="property-form-ant_id" type="number" class="custom-item-content custom-input" value="0" placeholder="索引">
+						</select>
+					</div> -->
+					<div class="custom-item">
+						<span class="custom-item-label">频段:</span>
+						<input id="property-form-frequency" type="number" class="custom-item-content custom-input" value="0" placeholder="频段">
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<span class="custom-item-label">X轴(米):</span>
+						<input id="property-form-x" type="float" class="custom-item-content custom-input" value="0" placeholder="X轴">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">Y轴(米):</span>
+						<input id="property-form-y" type="float" class="custom-item-content custom-input" value="0" placeholder="Y轴">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">Z轴(米):</span>
+						<input id="property-form-z" type="float" class="custom-item-content custom-input" value="0" placeholder="Z轴">
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<div id="property-form-save" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>保存</span>
+						</div>
+						<div id="property-form-delete" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>删除</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="custom-dropdown-content hidden" id="terminal-property-form">
+					<div class="custom-item">
+						<span class="custom-item-label">终端:</span>
+						<input id="property-form-name" class="custom-item-content custom-input" type="text" placeholder="name" readonly="">
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item hidden">
+						<input id="property-form-uuid" type="float" class="custom-item-content custom-input" readonly="">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">X轴(米):</span>
+						<input id="property-form-x" type="float" class="custom-item-content custom-input" value="0" placeholder="X轴">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">Y轴(米):</span>
+						<input id="property-form-y" type="float" class="custom-item-content custom-input" value="0" placeholder="Y轴">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">Z轴(米):</span>
+						<input id="property-form-z" type="float" class="custom-item-content custom-input" value="0" placeholder="Z轴">
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<span class="custom-item-label">RSRP:</span>
+						<input id="property-form-rsrp" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">SINR:</span>
+						<input id="property-form-sinr" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">用户满意度:</span>
+						<input id="property-form-ss" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">上行吞吐量(Mbps):</span>
+						<input id="property-form-upspeed" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">下行吞吐量(Mbps):</span>
+						<input id="property-form-downspeed" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">上行时延:</span>
+						<input id="property-form-upttl" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">下行时延:</span>
+						<input id="property-form-downttl" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+					<hr class="solid">
+					<div class="custom-item">
+						<span class="custom-item-label" style="color: red;">预设</span>
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">上行吞吐量(Mbps):</span>
+						<input id="property-form-upspeed-dvalue" type="text" class="custom-item-content custom-input">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">下行吞吐量(Mbps):</span>
+						<input id="property-form-downspeed-dvalue" type="text" class="custom-item-content custom-input">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">上行时延:</span>
+						<input id="property-form-upttl-dvalue" type="text" class="custom-item-content custom-input">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">下行时延:</span>
+						<input id="property-form-downttl-dvalue" type="text" class="custom-item-content custom-input">
+					</div>
+
+					<div class="custom-item">
+						<div id="property-form-save" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>保存</span>
+						</div>
+						<div id="property-form-delete" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>删除</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="custom-dropdown-content hidden" id="ue-property-form">
+					<div class="custom-item">
+						<span class="custom-item-label">终端ID:</span>
+						<input id="property-form-id" class="custom-item-content custom-input" type="text" readonly="">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">终端类型:</span>
+						<input id="property-form-type" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">RSRP:</span>
+						<input id="property-form-rsrp" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">SINR:</span>
+						<input id="property-form-sinr" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">用户满意度:</span>
+						<input id="property-form-ss" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">上行吞吐量(Mbps):</span>
+						<input id="property-form-upspeed" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">下行吞吐量(Mbps):</span>
+						<input id="property-form-downspeed" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">上行时延:</span>
+						<input id="property-form-upttl" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">下行时延:</span>
+						<input id="property-form-downttl" type="text" readonly="" class="custom-item-content custom-input">
+					</div>
+				</div>
+
+				<div class="custom-dropdown-content hidden" id="bs-property-form">
+					<div class="custom-item">
+						<span class="custom-item-label">X轴(米):</span>
+						<input id="property-form-x" type="float" class="custom-item-content custom-input" value="0">
+					</div>
+					<div class="custom-item">
+						<span class="custom-item-label">Y轴(米):</span>
+						<input id="property-form-y" type="float" class="custom-item-content custom-input" value="0">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">高度(米):</span>
+						<input id="property-form-height" type="float" class="custom-item-content custom-input" value="0">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">发射功率（dBm）</span>
+						<input id="property-form-power" type="float" class="custom-item-content custom-input" value="0">
+					</div>
+
+					<div class="custom-item">
+						<span class="custom-item-label">频率</span>
+						<input id="property-form-frequency" type="float" class="custom-item-content custom-input" value="0">
+					</div>
+
+					<hr class="solid">
+					<div class="custom-item">
+						<div id="property-form-save" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>保存</span>
+						</div>
+						<div id="property-form-delete" class="custom-button-primary" style="width: 80px;height: 20px;margin-left: 20px;">
+							<span>删除</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="interfaces" class="card" style="position: relative; transform-style: preserve-3d;">
+		<div id="floorplanner" class="front" style="width: 1920px; height: 913px; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 1; transition: all 0.5s ease-out 0s;">
+			<div id="floorplanner-controls" style="backface-visibility: hidden;">
+				<a href="http://47.93.20.191:10001/project.html?pid=0#" class="btn btn-default btn-sm glyphicon glyphicon-floppy-disk" id="new2d" title="新建" style="backface-visibility: hidden;"></a>
+				<a href="http://47.93.20.191:10001/project.html?pid=0#" class="btn btn-default btn-sm glyphicon glyphicon-floppy-save" id="saveFile2d" title="保存" style="backface-visibility: hidden;"></a>
+				<a class="btn btn-sm btn-default btn-file glyphicon glyphicon-floppy-open" title="打开" style="backface-visibility: hidden;">
+					<input type="file" class="hidden-input" id="loadFile2d" style="backface-visibility: hidden;">
+				</a>
+				<button id="move" class="btn btn-sm btn-default" title="移动" style="backface-visibility: hidden;">
+					<span class="glyphicon glyphicon-move" style="backface-visibility: hidden;"></span>
+				</button>
+				<button id="draw" class="btn btn-sm btn-default" title="绘制" style="backface-visibility: hidden;">
+					<span class="glyphicon glyphicon-pencil" style="backface-visibility: hidden;"></span>
+				</button>
+				<button id="delete" class="btn btn-sm btn-default" title="删除" style="backface-visibility: hidden;">
+					<span class="glyphicon glyphicon-remove" style="backface-visibility: hidden;"></span>
+				</button>
+				<!-- <button id="help2d" class="btn btn-sm btn-default"
+					title="Tips&#10;Shift Key: Snap To Axis and Snap to Grid&#10;ESC: Stop drawing walls&#10;DbL-Click(Corner): Adjust Elevation&#10;Click(Room): Change Name&#10;">
+					<span class="glyphicon glyphicon-info-sign"></span>
+				</button> -->
+			</div>
+			<div id="floorplanner-controls-import" style="backface-visibility: hidden;">
+				<button class="btn btn-sm btn-default" title="导入图片" data-toggle="modal" data-target="#import-png-modal" style="backface-visibility: hidden;">
+					<span class="glyphicon glyphicon-import" style="backface-visibility: hidden;"></span>
+				</button>
+
+				<button class="btn btn-sm btn-default" title="导入DXF文件" data-toggle="modal" data-target="#import-dxf-modal" style="backface-visibility: hidden;">
+					<span class="glyphicon glyphicon-import" style="backface-visibility: hidden;"></span>
+				</button>
+			</div>
+			<div class="btn-hint " style="backface-visibility: hidden;">Press the "Esc" key to stop drawing
+				walls</div>
+			<canvas id="floorplanner-canvas" height="913" width="1920" style="height: 913px; width: 1920px; backface-visibility: hidden;"></canvas>
+		</div>
+
+		<div id="viewer" class="back" style="backface-visibility: hidden; transform-style: preserve-3d; position: relative; z-index: 0; height: 100%; width: 100%; transform: rotateX(-180deg); transition: all 0.5s ease-out 0s;">
+			<div id="main-controls" class="" style="backface-visibility: hidden;">
+				<a href="http://47.93.20.191:10001/project.html?pid=0#" class="btn btn-default btn-sm glyphicon glyphicon-floppy-disk hidden" id="new" title="新建" style="backface-visibility: hidden;"></a>
+				<a href="http://47.93.20.191:10001/project.html?pid=0#" class="btn btn-default btn-sm glyphicon glyphicon-floppy-save hidden" id="saveFile" title="保存" style="backface-visibility: hidden;"></a>
+				<a class="btn btn-sm btn-default btn-file glyphicon glyphicon-floppy-open hidden" title="载入" style="backface-visibility: hidden;">
+					<input type="file" class="hidden-input" style="backface-visibility: hidden;">
+				</a>
+				<a href="http://47.93.20.191:10001/project.html?pid=0#" class="btn btn-default btn-sm glyphicon glyphicon-asterisk" id="saveMesh" title="另存为(mesh)" style="backface-visibility: hidden;"></a>
+				<a href="http://47.93.20.191:10001/project.html?pid=0#" class="btn btn-default btn-sm glyphicon glyphicon-export" id="saveGLTF" title="另存为(GLTF)" style="backface-visibility: hidden;"></a>
+			</div>
+			<div id="main-controls-export" style="backface-visibility: hidden;">
+				<a href="http://47.93.20.191:10001/project.html?pid=0#" class="btn btn-default btn-sm glyphicon glyphicon-export" id="exportSBodysData" title="导出物体数据" style="backface-visibility: hidden;"></a>
+				<a href="http://47.93.20.191:10001/project.html?pid=0#" class="btn btn-default btn-sm glyphicon glyphicon-export" id="exportSGridsData" title="导出栅格数据" style="backface-visibility: hidden;"></a>
+				<a href="http://47.93.20.191:10001/project.html?pid=0#" class="btn btn-default btn-sm glyphicon glyphicon-export" id="exportSBasesData" title="导出基站数据" style="backface-visibility: hidden;"></a>
+
+				<a href="http://47.93.20.191:10001/project.html?pid=0#" class="btn btn-default btn-sm glyphicon glyphicon-asterisk" id="exportSBodysDataWithMesh" title="导出物体数据(mesh)" style="backface-visibility: hidden;"></a>
+			</div>
+			<div id="main-controls-import" style="backface-visibility: hidden;">
+				<a href="http://47.93.20.191:10001/project.html?pid=0#" class="btn btn-sm btn-default btn-file glyphicon glyphicon-import" title="导入仿真结果(覆盖栅格)" style="backface-visibility: hidden;">
+					<input type="file" class="hidden-input" id="importSGridData" style="backface-visibility: hidden;">
+				</a>
+				<a href="http://47.93.20.191:10001/project.html?pid=0#" class="btn btn-sm btn-default btn-file glyphicon glyphicon-import" title="导入仿真结果(容量栅格)" style="backface-visibility: hidden;">
+					<input type="file" class="hidden-input" id="importSGrid2Data" style="backface-visibility: hidden;">
+				</a>
+			</div>
+		<canvas width="1920" height="913" style="width: 1920px; height: 913px; backface-visibility: hidden;"></canvas></div>
+	</div>
+	<div id="interface-controls" class="hidden">
+		<button id="showFloorPlan" class="btn btn-sm btn-default active" title="编辑二维数据">
+			<span class="glyphicon glyphicon-move"></span> 二维
+		</button>
+		<button id="showDesign" class="btn btn-sm btn-default" title="编辑三维数据">
+			<span class="glyphicon glyphicon-move"></span> 三维
+		</button>
+		<div class="btn-group-vertical hidden" id="viewcontrols" style="display: none;">
+			<div class="btn btn-sm btn-default">
+				<a class="btn btn-default bottom" href="http://47.93.20.191:10001/project.html?pid=0#" id="leftview" title="Show side view (left)">
+					<span class="glyphicon glyphicon glyphicon-object-align-left"></span>
+				</a>
+				<span class="btn-group-vertical">
+					<a class="btn btn-default" href="http://47.93.20.191:10001/project.html?pid=0#" id="topview" title="Show top view">
+						<span class="glyphicon glyphicon glyphicon-object-align-horizontal"></span>
+					</a>
+					<a class="btn btn-default" href="http://47.93.20.191:10001/project.html?pid=0#" id="isometryview" title="Show 3d view">
+						<span class="glyphicon glyphicon glyphicon-inbox"></span>
+					</a>
+					<a class="btn btn-default" href="http://47.93.20.191:10001/project.html?pid=0#" id="frontview" title="Show front view">
+						<span class="glyphicon glyphicon glyphicon-object-align-vertical"></span>
+					</a>
+				</span>
+				<a class="btn btn-default bottom" href="http://47.93.20.191:10001/project.html?pid=0#" id="rightview" title="Show side view (right)">
+					<span class="glyphicon glyphicon glyphicon-object-align-right"></span>
+				</a>
+			</div>
+			<button id="showSwitchCameraMode" class="btn btn-sm btn-default" title="Switch Camera ortho/perspective">
+				<span class="glyphicon glyphicon-camera"></span>
+			</button>
+			<button id="showSwitchWireframeMode" class="btn btn-sm btn-default" title="Switch wireframe mode">
+				<span class="glyphicon glyphicon-pencil"></span>
+			</button>
+		</div>
+		<button id="showAddItems" class="btn btn-sm btn-default" data-toggle="modal" data-target="#add-items-modal" title="Add/Remove items in 3D" style="display: none;">
+			<span class="glyphicon glyphicon-plus"></span>
+		</button>
+		<!-- 		<button id="showFirstPerson" class="btn btn-sm btn-default" title="Walk through"> -->
+		<!-- 			<span class="glyphicon glyphicon-eye-open"></span> -->
+		<!-- 		</button> -->
+	</div>
+
+	<div style="right: 10px;position: absolute;bottom: 10px;z-index: 100;">
+		<button class="btn btn-sm btn-default" title="图例" id="tuli-btn">
+			<span class="glyphicon glyphicon-import"></span>
+		</button>
+	</div>
+	<div id="tuli-panel" class="hidden" style="position: fixed;bottom: 50px;right: 50px;width: 200px; background-color: rgba(255,255,255,.5);">
+		<table class="table">
+			<thead style="background-color: rgba(255,255,255,.7);">
+				<tr>
+					<th>颜色</th>
+					<th>
+						<div style="display: flex; flex-flow: row nowrap;">
+							<span style="flex-grow:1">名称</span>
+							<span class="icon iconfont icon-edit" style="color: #666; cursor: pointer;" title="编辑" data-toggle="modal" data-target="#edit-desktop-legend">
+						</span></div>
+					</th>
+				</tr>
+			</thead>
+			<tbody id="desktop-legend-body"><tr>
+      <td><div style="background-color: rgb(0,0,255); width: 20px;height: 20px;"></div></td>
+      <td>X&gt;-60</td>
+    </tr><tr>
+        <td><div style="background-color: rgb(0,0,255); width: 20px;height: 20px;"></div></td>
+        <td>-70&lt;X&lt;=-60</td>
+      </tr><tr>
+        <td><div style="background-color: rgb(45,89,255); width: 20px;height: 20px;"></div></td>
+        <td>-75&lt;X&lt;=-70</td>
+      </tr><tr>
+        <td><div style="background-color: rgb(13,179,255); width: 20px;height: 20px;"></div></td>
+        <td>-80&lt;X&lt;=-75</td>
+      </tr><tr>
+        <td><div style="background-color: rgb(0,236,255); width: 20px;height: 20px;"></div></td>
+        <td>-85&lt;X&lt;=-80</td>
+      </tr><tr>
+        <td><div style="background-color: rgb(128,255,178); width: 20px;height: 20px;"></div></td>
+        <td>-90&lt;X&lt;=-85</td>
+      </tr><tr>
+        <td><div style="background-color: rgb(255,236,64); width: 20px;height: 20px;"></div></td>
+        <td>-100&lt;X&lt;=-90</td>
+      </tr><tr>
+        <td><div style="background-color: rgb(255,178,0); width: 20px;height: 20px;"></div></td>
+        <td>-120&lt;X&lt;=-100</td>
+      </tr><tr>
+        <td><div style="background-color: rgb(255,89,0); width: 20px;height: 20px;"></div></td>
+        <td>-140&lt;X&lt;=-120</td>
+      </tr><tr>
+      <td><div style="background-color: rgb(255,0,0); width: 20px;height: 20px;"></div></td>
+      <td>X&lt;=-140</td>
+    </tr></tbody>
+		</table>
+	</div>
+
+	<!-- Add Items -->
+	<div class="modal right fade" id="add-items-modal" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog" style="width:500px;height:550px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">Furniture Inventory</h4>
+				</div>
+				<div class="modal-body">
+					<div id="add-items" class="panel-group">
+
+						<div id="floor-items" class="panel panel-default">
+							<div id="floor-items-header" class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#add-items" href="http://47.93.20.191:10001/project.html?pid=0#floor-items-body">Floor
+										Items</a>
+								</h4>
+							</div>
+							<div id="floor-items-body" class="panel-collapse collapse inventory-content">
+								<div class="row panel-body" id="floor-items-wrapper">
+									<!-- Items added here by items.js -->
+								<div class="col-sm-4"><a class="thumbnail add-item" model-name="椅子" model-url="models/js/gus-churchchair-whiteoak.js" model-scale="1,1,1" model-type="1"><img src="./中台室内仿真模块_files/thumbnail_Church-Chair-oak-white_1024x1024.jpg" alt="Add Item" data-dismiss="modal"> 椅子</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="沙发椅（红色）" model-url="models/js/ik-ekero-orange_baked.js" model-scale="1,1,1" model-type="1"><img src="./中台室内仿真模块_files/thumbnail_tn-orange.png" alt="Add Item" data-dismiss="modal"> 沙发椅（红色）</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="沙发椅（蓝色）" model-url="models/js/ik-ekero-blue_baked.js" model-scale="1,1,1" model-type="1"><img src="./中台室内仿真模块_files/thumbnail_ekero-blue3.png" alt="Add Item" data-dismiss="modal"> 沙发椅（蓝色）</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Dresser-Wood-Dark" model-url="models/js/DWR_MATERA_DRESSER2.js" model-scale="1,1,1" model-type="1"><img src="./中台室内仿真模块_files/thumbnail_matera_dresser_5.png" alt="Add Item" data-dismiss="modal"> 暗色木质柜子</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Dresser-White" model-url="models/js/we-narrow6white_baked.js" model-scale="1,1,1" model-type="1"><img src="./中台室内仿真模块_files/thumbnail_img25o.jpg" alt="Add Item" data-dismiss="modal"> 白色柜子</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Bedside table - Shale" model-url="models/js/bd-shalebedside-smoke_baked.js" model-scale="1,1,1" model-type="1"><img src="./中台室内仿真模块_files/thumbnail_Blu-Dot-Shale-Bedside-Table.jpg" alt="Add Item" data-dismiss="modal"> 木质床头柜</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Bedside table - White" model-url="models/js/cb-archnight-white_baked.js" model-scale="1,1,1" model-type="1"><img src="./中台室内仿真模块_files/thumbnail_arch-white-oval-nightstand.jpg" alt="Add Item" data-dismiss="modal"> 白色床头柜</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Wardrobe - White" model-url="models/js/ik-kivine_baked.js" model-scale="1,1,1" model-type="1"><img src="./中台室内仿真模块_files/thumbnail_TN-ikea-kvikine.png" alt="Add Item" data-dismiss="modal"> 白色衣柜</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Full Bed" model-url="models/js/ik_nordli_full.js" model-scale="1,1,1" model-type="1"><img src="./中台室内仿真模块_files/thumbnail_nordli-bed-frame__0159270_PE315708_S4.JPG" alt="Add Item" data-dismiss="modal"> 双人床</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Bookshelf" model-url="models/js/cb-kendallbookcasewalnut_baked.js" model-scale="1,1,1" model-type="1"><img src="./中台室内仿真模块_files/thumbnail_kendall-walnut-bookcase.jpg" alt="Add Item" data-dismiss="modal"> 书架</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Sectional - Olive" model-url="models/js/we-crosby2piece-greenbaked.js" model-scale="1,1,1" model-type="1"><img src="./中台室内仿真模块_files/thumbnail_img21o.jpg" alt="Add Item" data-dismiss="modal"> 拐角沙发</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Sofa - Grey" model-url="models/js/cb-rochelle-gray_baked.js" model-scale="1,1,1" model-type="1"><img src="./中台室内仿真模块_files/thumbnail_rochelle-sofa-3.jpg" alt="Add Item" data-dismiss="modal"> 三人沙发</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Floor Lamp" model-url="models/js/ore-3legged-white_baked.js" model-scale="1,1,1" model-type="1"><img src="./中台室内仿真模块_files/thumbnail_ore-white.png" alt="Add Item" data-dismiss="modal"> 落地灯</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Bedbunk" model-url="models/gltf/bedBunk.glb" model-type="1" model-format="gltf"><img src="./中台室内仿真模块_files/bedBunk.png" alt="Add Item" data-dismiss="modal"> 双层床</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Beddouble" model-url="models/gltf/bedDouble.glb" model-type="1" model-format="gltf"><img src="./中台室内仿真模块_files/bedDouble.png" alt="Add Item" data-dismiss="modal"> 床</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Bedsingle" model-url="models/gltf/bedSingle.glb" model-type="1" model-format="gltf"><img src="./中台室内仿真模块_files/bedSingle.png" alt="Add Item" data-dismiss="modal"> 床</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Bench" model-url="models/gltf/bench.glb" model-type="1" model-format="gltf"><img src="./中台室内仿真模块_files/bench.png" alt="Add Item" data-dismiss="modal"> 椅子</a></div></div>
+							</div>
+						</div>
+
+
+						<div id="roof-items" class="panel panel-default">
+							<div id="roof-items-header" class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#add-items" href="http://47.93.20.191:10001/project.html?pid=0#roof-items-body">Ceiling
+										Items</a>
+								</h4>
+							</div>
+							<div id="roof-items-body" class="panel-collapse collapse inventory-content">
+								<div class="row panel-body" id="roof-items-wrapper">
+									<!-- Items added here by items.js -->
+								<div class="col-sm-4"><a class="thumbnail add-item" model-name="Ceilingfan" model-url="models/gltf/ceilingFan.gltf" model-type="4" model-format="gltf"><img src="./中台室内仿真模块_files/Ceilingfan_1590204798948.png" alt="Add Item" data-dismiss="modal"> 风扇</a></div></div>
+							</div>
+						</div>
+
+
+						<div id="wall-items" class="panel panel-default">
+							<div id="wall-items-header" class="panel-heading">
+								<h4 class="panel-title"><a data-toggle="collapse" data-parent="#add-items" href="http://47.93.20.191:10001/project.html?pid=0#wall-items-body">Wall Items</a></h4>
+							</div>
+							<div id="wall-items-body" class="panel-collapse collapse inventory-content">
+								<div class="row panel-body" id="wall-items-wrapper">
+									<!-- Items added here by items.js -->
+								<div class="col-sm-4"><a class="thumbnail add-item" model-name="Computerscreen" model-url="models/gltf/computerScreen.glb" model-type="2" model-format="gltf"><img src="./中台室内仿真模块_files/computerScreen.png" alt="Add Item" data-dismiss="modal"> 显示器</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Televisionmodern" model-url="models/gltf/televisionModern.glb" model-type="2" model-format="gltf"><img src="./中台室内仿真模块_files/televisionModern.png" alt="Add Item" data-dismiss="modal"> 电视</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Televisionvintage" model-url="models/gltf/televisionVintage.glb" model-type="2" model-format="gltf"><img src="./中台室内仿真模块_files/televisionVintage.png" alt="Add Item" data-dismiss="modal"> 电视</a></div></div>
+							</div>
+						</div>
+						<div id="in-wall-items" class="panel panel-default">
+							<div id="in-wall-items-header" class="panel-heading">
+								<h4 class="panel-title"><a data-toggle="collapse" data-parent="#add-items" href="http://47.93.20.191:10001/project.html?pid=0#in-wall-items-body">In Wall Items</a></h4>
+							</div>
+							<div id="in-wall-items-body" class="panel-collapse collapse inventory-content">
+								<div class="row panel-body" id="in-wall-items-wrapper">
+									<!-- Items added here by items.js -->
+								<div class="col-sm-4"><a class="thumbnail add-item" model-name="Doorway" model-url="models/gltf/doorway.glb" model-type="3" model-format="gltf"><img src="./中台室内仿真模块_files/doorway.png" alt="Add Item" data-dismiss="modal"> 门</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Doorwayfront" model-url="models/gltf/doorwayFront.glb" model-type="3" model-format="gltf"><img src="./中台室内仿真模块_files/doorwayFront.png" alt="Add Item" data-dismiss="modal"> 门</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Doorwayopen" model-url="models/gltf/doorwayOpen.glb" model-type="3" model-format="gltf"><img src="./中台室内仿真模块_files/doorwayOpen.png" alt="Add Item" data-dismiss="modal"> 门洞</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Walldoorway" model-url="models/gltf/wallDoorway.glb" model-type="3" model-format="gltf"><img src="./中台室内仿真模块_files/wallDoorway.png" alt="Add Item" data-dismiss="modal"> 门洞</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Walldoorwaywide" model-url="models/gltf/wallDoorwayWide.glb" model-type="3" model-format="gltf"><img src="./中台室内仿真模块_files/wallDoorwayWide.png" alt="Add Item" data-dismiss="modal"> 门洞</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Wallwindow" model-url="models/gltf/wallWindow.glb" model-type="3" model-format="gltf"><img src="./中台室内仿真模块_files/wallWindow.png" alt="Add Item" data-dismiss="modal"> 窗户</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Wallwindowslide" model-url="models/gltf/wallWindowSlide.glb" model-type="3" model-format="gltf"><img src="./中台室内仿真模块_files/wallWindowSlide.png" alt="Add Item" data-dismiss="modal"> 窗户</a></div></div>
+							</div>
+						</div>
+						<div id="in-wall-floor-items" class="panel panel-default">
+							<div id="in-wall-floor-items-header" class="panel-heading">
+								<h4 class="panel-title"><a data-toggle="collapse" data-parent="#add-items" href="http://47.93.20.191:10001/project.html?pid=0#in-wall-floor-items-body">In Wall Floor Items</a></h4>
+							</div>
+							<div id="in-wall-floor-items-body" class="panel-collapse collapse inventory-content">
+								<div class="row panel-body" id="in-wall-floor-items-wrapper">
+									<!-- Items added here by items.js -->
+								<div class="col-sm-4"><a class="thumbnail add-item" model-name="Closed Door" model-url="models/js/closed-door28x80_baked.js" model-scale="2.059732,1.128260,1" model-type="7"><img src="./中台室内仿真模块_files/thumbnail_Screen_Shot_2014-10-27_at_8.04.12_PM.png" alt="Add Item" data-dismiss="modal"> 木头门</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Open Door" model-url="models/js/open_door.js" model-scale="2.059732,1.128260,1" model-type="7"><img src="./中台室内仿真模块_files/thumbnail_Screen_Shot_2014-10-27_at_8.22.46_PM.png" alt="Add Item" data-dismiss="modal"> 门洞</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Window" model-url="models/js/whitewindow.js" model-scale="1.625,1.4665,1" model-type="7"><img src="./中台室内仿真模块_files/thumbnail_window.png" alt="Add Item" data-dismiss="modal"> 落地玻璃窗</a></div></div>
+							</div>
+						</div>
+						<div id="on-floor-items" class="panel panel-default">
+							<div id="on-floor-items-header" class="panel-heading">
+								<h4 class="panel-title"><a data-toggle="collapse" data-parent="#add-items" href="http://47.93.20.191:10001/project.html?pid=0#on-floor-items-body">On Floor Items</a></h4>
+							</div>
+							<div id="on-floor-items-body" class="panel-collapse collapse inventory-content">
+								<div class="row panel-body" id="on-floor-items-wrapper">
+									<!-- Items added here by items.js -->
+								<div class="col-sm-4"><a class="thumbnail add-item" model-name="Blue Rug" model-url="models/js/cb-blue-block-60x96.js" model-scale="1,1,1" model-type="8"><img src="./中台室内仿真模块_files/thumbnail_cb-blue-block60x96.png" alt="Add Item" data-dismiss="modal"> 地毯</a></div></div>
+							</div>
+						</div>
+						<div id="wall-floor-items" class="panel panel-default">
+							<div id="wall-floor-items-header" class="panel-heading">
+								<h4 class="panel-title"><a data-toggle="collapse" data-parent="#add-items" href="http://47.93.20.191:10001/project.html?pid=0#wall-floor-items-body">Wall-Floor Items</a></h4>
+							</div>
+							<div id="wall-floor-items-body" class="panel-collapse collapse inventory-content">
+								<div class="row panel-body" id="wall-floor-items-wrapper">
+									<!-- Items added here by items.js -->
+								<div class="col-sm-4"><a class="thumbnail add-item" model-name="Media Console - White" model-url="models/js/cb-clapboard_baked.js" model-scale="1,1,1" model-type="9"><img src="./中台室内仿真模块_files/thumbnail_clapboard-white-60-media-console-1.jpg" alt="Add Item" data-dismiss="modal"> 电视柜&amp;电视</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Media Console - Black" model-url="models/js/cb-moore_baked.js" model-scale="1,1,1" model-type="9"><img src="./中台室内仿真模块_files/thumbnail_moore-60-media-console-1.jpg" alt="Add Item" data-dismiss="modal"> 电视柜&amp;电视</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Bathroomsink" model-url="models/gltf/bathroomSink.glb" model-type="9" model-format="gltf"><img src="./中台室内仿真模块_files/bathroomSink.png" alt="Add Item" data-dismiss="modal"> 洗浴</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Bathroomsinksquare" model-url="models/gltf/bathroomSinkSquare.glb" model-type="9" model-format="gltf"><img src="./中台室内仿真模块_files/bathroomSinkSquare.png" alt="Add Item" data-dismiss="modal"> 洗浴</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Loungedesignsofacorner" model-url="models/gltf/loungeDesignSofaCorner.glb" model-type="9" model-format="gltf"><img src="./中台室内仿真模块_files/loungeDesignSofaCorner.png" alt="Add Item" data-dismiss="modal"> 沙发</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Shower" model-url="models/gltf/shower.glb" model-type="9" model-format="gltf"><img src="./中台室内仿真模块_files/shower.png" alt="Add Item" data-dismiss="modal"> 浴室</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Showerround" model-url="models/gltf/showerRound.glb" model-type="9" model-format="gltf"><img src="./中台室内仿真模块_files/showerRound.png" alt="Add Item" data-dismiss="modal"> 浴室</a></div></div>
+							</div>
+						</div>
+						<div id="item-items" class="panel panel-default">
+							<div id="item-items-header" class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#add-items" href="http://47.93.20.191:10001/project.html?pid=0#item-items-body">Anywhere
+										Items</a>
+								</h4>
+							</div>
+							<div id="item-items-body" class="panel-collapse collapse inventory-content">
+								<div class="row panel-body" id="item-items-wrapper">
+									<!-- Items added here by items.js -->
+								<div class="col-sm-4"><a class="thumbnail add-item" model-name="Lamproundtable" model-url="models/gltf/lampRoundTable.glb" model-type="0" model-format="gltf"><img src="./中台室内仿真模块_files/lampRoundTable.png" alt="Add Item" data-dismiss="modal"> 床头灯</a></div><div class="col-sm-4"><a class="thumbnail add-item" model-name="Radio" model-url="models/gltf/radio.glb" model-type="0" model-format="gltf"><img src="./中台室内仿真模块_files/radio.png" alt="Add Item" data-dismiss="modal"> 收音机</a></div></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 导入设计稿（PNG） -->
+	<div class="modal right fade" id="import-png-modal" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">导入设计稿（PNG）</h4>
+				</div>
+				<div class="modal-body">
+					<a class="btn btn-sm btn-default btn-file glyphicon glyphicon-floppy-open" title="打开">
+						<input id="importPNGFile" type="file" class="hidden-input">
+					</a>
+					<button id="parsePNGFile" class="btn btn-sm btn-default" title="识别">
+						<span class="glyphicon glyphicon-refresh"></span>
+					</button>
+					<canvas id="importPNGCanvas" style="width: 300px;height: 200px;">
+					</canvas>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" id="makePlannerFromPNG">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 导入设计稿（DXF） -->
+	<div class="modal right fade" id="import-dxf-modal" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">导入设计稿（DXF）</h4>
+				</div>
+				<div class="modal-body">
+					<a class="btn btn-sm btn-default btn-file glyphicon glyphicon-floppy-open" title="打开">
+						<input id="importDXFFile" type="file" class="hidden-input">
+					</a>
+					<button id="parseDXFFile" class="btn btn-sm btn-default" title="识别">
+						<span class="glyphicon glyphicon-refresh"></span>
+					</button>
+					<canvas id="importDXFCanvas" width="500" height="500" style="margin-top: 10px; margin-left: 10px;">
+					</canvas>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" id="makePlannerFromDXF">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 导入图纸 -->
+	<div class="modal right fade" id="import-paper-modal" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 650px;">
+				<div class="modal-header">
+					<span class="modal-title">导入图纸</span>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-12 flex-up-down" style="height: 400px;align-items: center;justify-content: center;">
+							<input type="file" accept="image/*" style="display: none;" id="loadPaperPngInput">
+							<div style="width: 400px; height: 350px; border: 1px dashed rgba(0,0,0,.2); 
+								background-color: #f7f7f7;align-items: center;justify-content: center;" class="flex-up-down" onclick="$(&#39;#loadPaperPngInput&#39;).click()">
+								<span class="glyphicon glyphicon-folder-close" style="color: #008fdf; margin: 10px;font-size: 30px;"></span>
+								<span style="color: #666666; margin: 10px;">点击这里上传图片</span>
+								<span style="color: #999999;">支持扩展名： png</span>
+							</div>
+							<canvas id="loadPaperPngCanvas" style="position: absolute; height: 90%;pointer-events: none;">
+							</canvas>
+						</div>
+					</div>
+					<div class="container" style="width: 650px;">
+						<div class="row">
+							<div class="col-md-6" style="height: 50px;">
+								灰度阈值:<span id="grayLevelVal">1</span><div class="slider slider-horizontal" id="grayLevelSlider" style="width: 250px;"><div class="slider-track"><div class="slider-track-low" style="left: 0px; width: 0%;"></div><div class="slider-selection" style="left: 0%; width: 100%;"></div><div class="slider-track-high" style="right: 0px; width: 0%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top" role="presentation" style="left: 100%;"><div class="arrow"></div><div class="tooltip-inner">1</div></div><div class="tooltip tooltip-min bs-tooltip-top" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="0" aria-valuemax="1" aria-valuenow="1" tabindex="0" style="left: 100%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0" tabindex="0" style="left: 0%;"></div></div><input id="grayLevel" data-slider-id="grayLevelSlider" type="text" data-slider-min="0" data-slider-max="1" data-slider-step="0.01" data-slider-value="1" style="width: 250px; display: none;" data-value="1" value="1">
+							</div>
+							<div class="col-md-6" style="height: 50px;">
+								透明度:<span id="alphaLevelVal">1</span><div class="slider slider-horizontal" id="alphaLevelSlider" style="width: 250px;"><div class="slider-track"><div class="slider-track-low" style="left: 0px; width: 0%;"></div><div class="slider-selection" style="left: 0%; width: 100%;"></div><div class="slider-track-high" style="right: 0px; width: 0%;"></div></div><div class="tooltip tooltip-main bs-tooltip-top" role="presentation" style="left: 100%;"><div class="arrow"></div><div class="tooltip-inner">1</div></div><div class="tooltip tooltip-min bs-tooltip-top" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max bs-tooltip-top" role="presentation"><div class="arrow"></div><div class="tooltip-inner"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="0" aria-valuemax="1" aria-valuenow="1" tabindex="0" style="left: 100%;"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0" tabindex="0" style="left: 0%;"></div></div><input id="alphaLevel" data-slider-id="alphaLevelSlider" type="text" data-slider-min="0" data-slider-max="1" data-slider-step="0.01" data-slider-value="1" style="width: 250px; display: none;" data-value="1" value="1">
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-2" style="height: 50px;padding-right: 0px;">
+								<span class="custom-item-label">宽度(米):</span>
+							</div>
+							<div class="col-md-4 vline" style="height: 50px;">
+								<input id="paper-png-width" type="number" style="width: 100px;">
+							</div>
+
+							<div class="col-md-2" style="height: 50px;padding-right: 0px;">
+								<span class="custom-item-label">X定位(米):</span>
+							</div>
+							<div class="col-md-4" style="height: 50px;">
+								<input id="paper-png-x-offset" type="number" style="width: 100px;">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-2" style="height: 50px;padding-right: 0px;">
+								<span class="custom-item-label">高度(米):</span>
+							</div>
+							<div class="col-md-4 vline" style="height: 50px;">
+								<input id="paper-png-height" type="number" style="width: 100px;">
+							</div>
+
+							<div class="col-md-2" style="height: 50px;padding-right: 0px;">
+								<span class="custom-item-label">Y定位(米):</span>
+							</div>
+							<div class="col-md-4" style="height: 50px;">
+								<input id="paper-png-y-offset" type="number" style="width: 100px;">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-2" style="height: 50px;">
+								<span class="custom-item-label">保持比例:</span>
+							</div>
+							<div class="col-md-4 vline" style="height: 50px;">
+								<input id="paper-png-wh-lock" type="checkbox" style="width: 100px;" checked="">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12" style="height: 50px; border-top: 1px solid rgba(0,0,0,.2); 
+							background-color: #f7f7f7; display: flex;flex-flow: column nowrap;">
+							<div style="text-align: center;">
+								<button data-dismiss="modal" class="btn btn-default" style="margin: 10px;">确定</button>
+								<button id="loadPaperPngBtn" class="btn btn-primary hidden" style="margin: 10px;">设置</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 导入CAD -->
+	<div class="modal right fade" id="import-cad-modal" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 1200px;">
+				<div class="modal-header">
+					<span class="modal-title">导入CAD</span>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6 flex-up-down" style="height: 600px;align-items: center;justify-content: center;">
+							<input type="file" accept="image/vnd.dxf" style="display: none;" id="loadDxfInput">
+							<!-- <div style="width: 350px; height: 300px; border: 1px dashed rgba(0,0,0,.2); 
+								background-color: #f7f7f7;align-items: center;justify-content: center;" class="flex-up-down"
+								onclick="$('#loadDxfInput').click()">
+								<span class="glyphicon glyphicon-folder-close"
+									style="color: #008fdf; margin: 20px;font-size: 30px;"></span>
+								<span style="color: #666666; margin: 20px;">点击或将文件拖拽到这里上传</span>
+								<span style="color: #999999;">支持扩展名： dxf</span>
+							</div> -->
+							<canvas id="loadDxfCanvas" style="position: absolute;width:500px;height: 500px;background-color:#f1f1f1;">
+							</canvas>
+						</div>
+						<div class="col-md-6" style="height: 600px; border-left: 1px solid rgba(0,0,0,.2); 
+							background-color: #f7f7f7; display: flex;flex-flow: column nowrap;">
+							<span style="margin: 10px 0 5px 0;">请选择图层</span>
+							<div style="flex-grow:1; overflow-y: auto;">
+								<ul class="list-group" id="loadDxfGroup"></ul>
+							</div>
+							<div style="text-align: center;">
+								<button class="btn btn-primary" id="loadDxfBtn" style="margin: 10px;">导入dxf</button>
+								<button class="btn btn-primary" id="loadDxfcreateBtn" style="margin: 10px;">生成</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 导入dxf 侧边图层item -->
+	<li class="checkbox list-group-item hidden" style="padding-left: 0px; padding-right: 0px;" id="loadDxfLineItemTmp">
+		<div class="row">
+			<input class="col-md-1 group-checkbox" style="margin-left:0px;position: relative;" type="checkbox">
+			<label class="col-md-3 group-lable">group</label>
+			<div class="col-md-4 row">
+				<label class="col-md-6">高度(米)：</label>
+				<input class="col-md-6 group-height" value="5">
+			</div>
+			<div class="col-md-4 row">
+				<label class="col-md-6">材质：</label>
+				<select class="col-md-6 group-mate">
+					<option value="concrete">混凝土</option>
+					<option value="plaster">石膏</option>
+					<option value="metal">金属</option>
+					<option value="glass">玻璃</option>
+					<option value="wood">木质</option>
+				</select>
+			</div>
+		</div>
+		<ul class="list-group lines hidden" style="margin-bottom: -10px;">
+			<li class="checkbox list-group-item line-li" style="padding-left: 0px; padding-right: 0px;border-radius:0px;border-left:none;border-right:none;background-color:#f9f9f9">
+				<input class="col-md-2 line-checkbox" style="margin-left:0px;position: relative;" type="checkbox">
+				<label class="line-lable">
+					line
+				</label>
+			</li>
+		</ul>
+	</li>
+
+	<!-- 模型管理 -->
+	<div class="modal right fade" id="model-management-modal" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog" style="display: inline-block; width: auto;">
+			<div class="modal-content" style="width: 800px;">
+				<div class="modal-header">
+					<span class="modal-title">模型管理</span>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body" style="margin-top: -1px;">
+					<div class="row">
+						<div class="col-md-2" style="height: 600px; background-color: #f7f7f7; display: flex;flex-flow: column nowrap; padding: 0;">
+							<ul id="model-management-dialog-nav-container">
+								<li id="model-management-dialog-nav-1" class="model-management-dialog-nav-item select">
+									地上
+								</li>
+								<li id="model-management-dialog-nav-4" class="model-management-dialog-nav-item">
+									天花板
+								</li>
+								<li id="model-management-dialog-nav-2" class="model-management-dialog-nav-item">
+									墙上
+								</li>
+								<li id="model-management-dialog-nav-3" class="model-management-dialog-nav-item">
+									墙内
+								</li>
+								<li id="model-management-dialog-nav-7" class="model-management-dialog-nav-item">
+									墙内&amp;地上
+								</li>
+								<li id="model-management-dialog-nav-8" class="model-management-dialog-nav-item">
+									地面
+								</li>
+								<li id="model-management-dialog-nav-9" class="model-management-dialog-nav-item">
+									墙角
+								</li>
+								<li id="model-management-dialog-nav-0" class="model-management-dialog-nav-item">
+									其他
+								</li>
+							</ul>
+						</div>
+						<div id="items-container" class="col-md-10" style="height: 600px; overflow-y: auto; padding: 10px;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 材质管理 -->
+	<div class="modal right fade" id="mate-management-modal" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog" style="display: inline-block; width: auto;">
+			<div class="modal-content" style="width: 800px;">
+				<div class="modal-header">
+					<span class="modal-title">材质管理</span>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body" style="margin-top: -1px;">
+					<div class="row">
+						<div id="mate-items-container" class="col-md-12" style="height: 600px; overflow-y: auto; padding: 10px;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 天线管理 -->
+	<div class="modal right fade" id="aerial-management-modal" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog" style="display: inline-block; width: auto;">
+			<div class="modal-content" style="width: 800px;">
+				<div class="modal-header">
+					<span class="modal-title">天线管理</span>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body" style="margin-top: -1px;">
+					<div class="row">
+						<div id="aerial-items-container" class="col-md-12" style="height: 600px; overflow-y: auto; padding: 10px;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 新建工程 -->
+	<div class="modal fade" id="new-project-modal" role="dialog">
+		<div class="modal-dialog" style="width: 600px;">
+			<div class="modal-content" style="width: 600px;">
+				<div class="modal-header">
+					<span class="modal-title">新建工程</span>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+
+					<div style="margin: 28px 0">
+						<div class="custom-item">
+							<span class="custom-item-label">工程名称:</span>
+							<input id="input-new-project-name" class="custom-item-content custom-input" type="text" placeholder="请输入名称">
+						</div>
+
+						<div class="custom-item">
+							<span class="custom-item-label">省份:</span>
+							<div class="custom-item-content">
+								<select class="custom-select" style="width: 40%;" id="province-selector">
+								</select>
+								<span class="custom-item-label" style="margin-left: 15px;">城市:</span>
+								<select class="custom-select" style="width: 40%;" id="city-selector">
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button id="confirm-new-project" type="button" class="btn btn-primary">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 新建工程 -->
+	<div class="modal fade" id="edit-project-modal" role="dialog">
+		<div class="modal-dialog" style="width: 600px;">
+			<div class="modal-content" style="width: 600px;">
+				<div class="modal-header">
+					<span class="modal-title">编辑工程</span>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+
+					<div style="margin: 28px 0">
+						<div class="project-property-item-content">
+							<span class="project-property-item-title">工程名称:</span>
+							<input id="edit-project-name" class="custom-input project-property-item-content-12" type="text" placeholder="请输入名称">
+						</div>
+
+						<div class="project-property-item-content">
+							<span class="project-property-item-title">单位:</span>
+							<select class="project-property-item-content-12 custom-select" id="edit-length-unit">
+								<option value="a">英尺</option>
+								<option value="b">英寸</option>
+								<option value="e">米</option>
+								<option value="c">厘米</option>
+								<option value="d">毫米</option>
+							</select>
+						</div>
+
+						<div class="project-property-item-content">
+							<span class="project-property-item-title">省份:</span>
+							<select class="custom-select project-property-item-content-6" id="edit-province-selector">
+							</select>
+							<span class="project-property-item-title">城市:</span>
+							<select class="custom-select project-property-item-content-6" id="edit-city-selector">
+							</select>
+						</div>
+
+						<div class="project-property-item-content">
+							<span class="project-property-item-title">原点 X:</span>
+							<input id="edit-x" class="custom-input project-property-item-content-6" type="number" placeholder="请输入X">
+							<span class="project-property-item-title">Y:</span>
+							<input id="edit-y" class="custom-input project-property-item-content-6" type="number" placeholder="请输入Y">
+						</div>
+
+						<div class="project-property-item-content">
+							<span class="project-property-item-title">纬度:</span>
+							<input id="edit-lat" class="custom-input project-property-item-content-6" type="number" placeholder="请输入纬度">
+							<span class="project-property-item-title">经度:</span>
+							<input id="edit-lng" class="custom-input project-property-item-content-6" type="number" placeholder="请输入经度">
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button id="confirm-edit-project" type="button" class="btn btn-primary">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 自动布站 -->
+	<div class="modal right fade in" id="simulate2-auto-modal" role="dialog" data-backdrop="false" data-keyboard="false" style="display: block;">
+		<div class="modal-dialog" style="width: 600px; top: 141px; left: 1256.74px;">
+			<div class="modal-content" style="width: 600px;">
+				<div class="modal-header">
+					<span class="modal-title">自动布站</span>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<div style="margin: 28px 0">
+						<div class="custom-item" style="margin-top: 15px;">
+							<div class="">
+								<label>天线:</label>
+								<select style="width: 80px;margin-left: 72px;" class="custom-select">
+									<option value="1">天线1</option>
+									<option value="2">天线2</option>
+									<option value="3">天线3</option>
+									<option value="4">天线4</option>
+								</select>
+							</div>
+						</div>
+						<div class="custom-item" style="margin-top: 15px;">
+							<div class="">
+								<label>功率(dbm):</label>
+								<input style="width: 80px;margin-left: 35px;">
+							</div>
+						</div>
+						<div class="custom-item" style="margin-top: 15px;">
+							<div class="">
+								<label>频率(MHz):</label>
+								<input style="width: 80px;margin-left: 35px;">
+							</div>
+						</div>
+						<div class="custom-item" style="margin-top: 15px;">
+							<div class="">
+								<label>RSRP指标 &gt; </label>
+								<input style="width: 80px;margin-left: 26px;margin-right: 15px;">
+								<label>占比</label>
+								<input style="width: 80px;margin-left: 15px;">
+    <label>%</label>
+								<!-- <select class="custom-select" style="width: 80px;margin-left: 35px;margin-right: 15px;">
+									<option value="1">FTP</option>
+									<option value="2">WEB</option>
+									<option value="3">VIDEO STREAM</option>
+									<option value="4">VOIP</option>
+									<option value="5">WeChart</option>
+								</select>
+								占比
+								<input style="width: 80px;margin-left: 15px;" type="number" value="10" />% -->
+							</div>
+						</div>
+						<div class="custom-item" style="margin-bottom: -20px;">
+							<progress id="simulation-auto-progress" value="5" max="5" style="height: 50px;width: 500px;"></progress>
+							<span id="simulation-auto-info" class="" style="height: 50px;width: 150px; padding-top: 12px;padding-left: 20px;color: #ff0000;">计算完成</span>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button id="start-simulation-auto" type="button" class="btn btn-primary ">重新计算</button>
+					<button id="show-simulation-auto-result" type="button" class="btn btn-danger">放置</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 覆盖预测 -->
+	<div class="modal right fade" id="simulate1-modal" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog" style="width: 600px;">
+			<div class="modal-content" style="width: 600px;">
+				<div class="modal-header">
+					<span class="modal-title">覆盖预测</span>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<div style="margin: 28px 0">
+						<div class="custom-item">
+							<div class="pretty p-default" style="width: 80px; color: var(--main-light-1-color);">
+								<input type="checkbox" id="simulate1-checkbox-1" checked="">
+								<div class="state p-primary">
+									<label>直射</label>
+								</div>
+							</div>
+							<div class="pretty p-default" style="margin-left: 50px; color: var(--main-light-1-color);">
+								<input type="checkbox" id="simulate1-checkbox-2" checked="">
+								<div class="state p-primary">
+									<label>反射</label>
+								</div>
+							</div>
+							<select class="custom-select" id="simulate1-checkbox-2-level" style="width: 60px;height: 20px;">
+								<option value="1">1阶</option>
+								<option value="2">2阶</option>
+								<option value="3">3阶</option>
+								<option value="4">4阶</option>
+							</select>
+						</div>
+						<div class="custom-item">
+							<div class="pretty p-default" style="width: 80px; color: var(--main-light-1-color);">
+								<input type="checkbox" id="simulate1-checkbox-3" checked="">
+								<div class="state p-primary">
+									<label>透射</label>
+								</div>
+							</div>
+							<div class="pretty p-default" style="width: 80px; margin-left: 50px; color: var(--main-light-1-color);">
+								<input type="checkbox" id="simulate1-checkbox-4" checked="">
+								<div class="state p-primary">
+									<label>方向性散射</label>
+								</div>
+							</div>
+							<div class="pretty p-default" style="width: 80px; margin-left: 50px; color: var(--main-light-1-color);">
+								<input type="checkbox" id="simulate1-checkbox-10">
+								<div class="state p-primary">
+									<label>多径开关</label>
+								</div>
+							</div>
+						</div>
+						<div class="custom-item" style="margin-top: 15px;">
+							<div class="">
+								<label>曲面近似:</label>
+								<input style="width: 80px;margin-left: 35px;" type="number" id="simulate1-arc-split-count" value="36">
+							</div>
+							<div class="state p-primary" style="margin-left: 20px;margin-right: 20px;">
+								<label>栅格模式: </label>
+							</div>
+							<select class="custom-select" id="simulate1-include-mode" style="width: 120px;height: 20px;">
+								<option value="2" selected="selected">最多包含模式</option>
+								<option value="0">最少包含模式</option>
+							</select>
+						</div>
+
+						<div class="custom-item hidden">
+							<span class="custom-item-label" style="width: 60px;text-align: left;">模式:</span>
+							<select class="custom-select" style="width: 520px;">
+								<option>室内</option>
+							</select>
+						</div>
+						<div class="custom-item" style="margin-bottom: -20px;">
+							<progress id="simulation-progress" value="0" max="10" style="height: 50px;width: 500px;"></progress>
+							<span id="simulation-info" class="hidden" style="height: 50px;width: 150px; padding-top: 12px;padding-left: 20px;color: #ff0000;"></span>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="stop-simulation" class="btn btn-default hidden">取消仿真</button>
+					<!-- <button type="button" class="btn btn-default" data-dismiss="modal">取消</button> -->
+					<button id="show-simulation-result" type="button" class="btn btn-danger hidden">显示结果</button>
+					<button id="start-simulation" type="button" class="btn btn-primary">开始仿真</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 容量仿真 -->
+	<div class="modal right fade" style="top: -100px;" id="simulate2-modal" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog" style="width: 600px;">
+			<div class="modal-content" style="width: 600px;">
+				<div class="modal-header">
+					<span class="modal-title">容量仿真</span>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<div style="margin: 28px 0">
+						<div class="custom-item" style="margin-top: 15px; padding-right: 5px;">
+							<div class="" style="flex:1;">
+								<label>调度公平系数:</label>
+								<input style="width: 80px; margin-right: 35px; float: right;" type="number" id="simulate2-scheduleAlhpa" value="0.8">
+							</div>
+							<div class="" style="flex:1;">
+								<label>调度遗忘因子:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-scheduleTc" value="400">
+							</div>
+						</div>
+						<div class="custom-item" style="margin-top: 15px; padding-right: 5px;">
+							<div class="" style="flex:1;">
+								<label>快照数量:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-snapshotNum" value="10">
+							</div>
+							<div class="" style="flex:1;">
+								<label>用户数:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-ueNum" value="200">
+							</div>
+						</div>
+						<div class="custom-item" style="margin-top: 15px; padding-right: 5px;">
+							<div class="" style="flex:1;">
+								<label>仿真时长(slot):</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-runLength" value="500">
+							</div>
+							<div class="" style="flex:1;">
+								<label>底噪:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-N0" value="-174">
+							</div>
+						</div>
+
+						<!-- <div class="custom-item" style="margin-top: 15px; padding-right: 5px;">
+							<div class="" style="flex:1;">
+								<label>上行边缘比例门限:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-edgRatio-up" value="0.05" />
+							</div>
+							<div class="" style="flex:1;">
+								<label>下行边缘比例门限:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-edgRatio-down" value="0.05" />
+							</div>
+						</div> -->
+
+						<div class="custom-item" style="margin-top: 15px; padding-right: 5px;">
+							<div class="" style="flex:1;">
+								<label>上行边缘比例门限:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-edgRatio-up" value="0.05">
+							</div>
+							<div class="" style="flex:1;">
+								<label>下行边缘比例门限:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-edgRatio-down" value="0.05">
+							</div>
+						</div>
+
+						<div class="custom-item" style="margin-top: 15px; padding-right: 5px;">
+							<div class="" style="flex:1;">
+								<label>上行满意度时延门限:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-satisfyDelay-up" value="5">
+							</div>
+							<div class="" style="flex:1;">
+								<label>下行满意度时延门限:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-satisfyDelay-down" value="5">
+							</div>
+						</div>
+
+						<div class="custom-item hidden" style="margin-top: 15px; padding-right: 5px;">
+							<div class="" style="flex:1;">
+								<label>上行满意度速率门限:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-minThrougtput-up" value="25">
+							</div>
+							<div class="" style="flex:1;">
+								<label>下行满意度速率门限:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-minThrougtput-down" value="25">
+							</div>
+						</div>
+
+						<div class="custom-item hidden" style="margin-top: 15px; padding-right: 5px;">
+							<div class="" style="flex:1;">
+								<label>上行满意度吞吐量门限:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-satisfyThrougtput-up" value="25">
+							</div>
+							<div class="" style="flex:1;">
+								<label>下行满意度吞吐量门限:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-satisfyThrougtput-down" value="25">
+							</div>
+						</div>
+
+						<div class="custom-item" style="margin-top: 15px; padding-right: 5px;">
+							<div class="" style="flex:1;">
+								<label>终端最大发射功率:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="number" id="simulate2-UeMaxTxPower" value="23">
+							</div>
+							<div class="" style="flex:1;">
+								<label>是否开启预调度:</label>
+								<input style="width: 80px;margin-right: 35px; float: right;" type="checkbox" id="simulate2-pre-schedule">
+							</div>
+						</div>
+
+						<div class="custom-item hidden" style="margin-bottom: -20px;">
+							<progress id="simulate2-progress" value="0" max="10" style="height: 50px;width: 500px;"></progress>
+							<span id="simulate2-info" class="hidden" style="height: 50px;width: 150px; padding-top: 12px;padding-left: 20px;color: #ff0000;"></span>
+						</div>
+
+						<ul class="nav nav-tabs" id="capacity-simulation-container">
+							<li role="presentation" class="capacity-simulation-item active" id="simulate2-fix-tab"><a href="http://47.93.20.191:10001/project.html?pid=0#">固定终端</a></li>
+							<li role="presentation" class="capacity-simulation-item" id="simulate2-line-tab"><a href="http://47.93.20.191:10001/project.html?pid=0#">轨迹终端</a></li>
+							<li role="presentation" class="capacity-simulation-item" id="simulate2-yewu-tab"><a href="http://47.93.20.191:10001/project.html?pid=0#">业务占比</a></li>
+						</ul>
+						<div style="height: 300px;overflow:scroll;">
+							<table style="margin: 20px 0;" id="capacity-table" data-pagination="true" data-pagination-detail-h-align="right">
+							</table>
+							<span id="yewu-tips" style="color: #ff0000;"></span>
+						</div>
+
+						<div class="custom-item" style="margin-bottom: -20px;">
+							<progress id="simulation2-progress" value="0" max="10" style="height: 50px;width: 500px;"></progress>
+							<span id="simulation2-info" class="hidden" style="height: 50px;width: 150px; padding-top: 12px;padding-left: 20px;color: #ff0000;"></span>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<!-- <button type="button" class="btn btn-default" data-dismiss="modal">取消</button> -->
+					<button type="button" id="stop-simulation2" class="btn btn-default hidden">取消仿真</button>
+					<button id="show-simulation2-result" type="button" class="btn btn-danger hidden">显示结果</button>
+					<button id="start-simulation2" type="button" class="btn btn-primary">开始仿真</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 校正 -->
+	<div class="modal right fade" id="simulate3-modal" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog" style="width: 600px;">
+			<div class="modal-content" style="width: 600px;">
+				<div class="modal-header">
+					<span class="modal-title">校正计算</span>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<div style="margin: 28px 0">
+						<div class="custom-item" style="margin-bottom: -20px;">
+							<progress id="simulation3-progress" value="0" max="10" style="height: 50px;width: 500px;"></progress>
+							<span id="simulation3-info" class="hidden" style="height: 50px;width: 150px; padding-top: 12px;padding-left: 20px;color: #ff0000;"></span>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<!-- <button type="button" class="btn btn-default" data-dismiss="modal">取消</button> -->
+					<!-- <button type="button" id="stop-simulation3" class="btn btn-default hidden" >取消校正</button> -->
+					<!-- <button id="apply-simulation3-result" type="button" class="btn btn-danger hidden">替换材质系数</button> -->
+					<button id="export-simulation3-result" type="button" class="btn btn-danger hidden">导出结果</button>
+					<button id="import-simulation3-result" type="button" class="btn btn-danger hidden">导入结果</button>
+					<button id="start-simulation3" type="button" class="btn btn-primary">开始校正</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="model-edit" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 500px;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">编辑</h4>
+				</div>
+
+				<div class="modal-body">
+					<form class="form-horizontal" id="model-edit-form">
+						<div class="box-body f-container">
+						</div>
+					</form>
+				</div>
+
+				<div class="modal-footer">
+					<button class="ok btn btn-default" data-dismiss="modal">确定</button>
+					<button class="cancel btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="mate-edit" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 500px;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">编辑</h4>
+				</div>
+
+				<div class="modal-body">
+					<form class="form-horizontal" id="mate-edit-form">
+						<div class="box-body f-container">
+						</div>
+					</form>
+				</div>
+
+				<div class="modal-footer">
+					<button class="ok btn btn-default" data-dismiss="modal">确定</button>
+					<button class="cancel btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="aerial-edit" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 1000px;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">天线管理</h4>
+				</div>
+
+				<div class="modal-body" style="display: flex;margin-top:20px">
+					<input type="file" accept="image/vnd.dxf" style="display: none;" id="loadAnnModal">
+					<form class="form-horizontal" id="aerial-edit-form" style="width: 500px;">
+						<div class="box-body f-container">
+						</div>
+					</form>
+					<div style="width: 500px;">
+						<ul id="aerial-2d-3d-tap-container" class="nav nav-pills" style="margin-bottom: 10px;">
+							<li id="aerial-2d-tap" class="active"><a href="http://47.93.20.191:10001/project.html?pid=0#">2D</a></li>
+							<li id="aerial-3d-tap"><a href="http://47.93.20.191:10001/project.html?pid=0#">3D</a></li>
+
+							<!-- <li id="import-modal"><a>导入模型</a></li> -->
+						</ul>
+						<div id="aerial-item-2d" class="">
+							<div style="width: 100%;height: 200px;display: flex;flex-flow: row nowrap;">
+								<div style="width: 180px;height: 180px;">
+									<div>水平波束</div>
+									<div style="width: 100%;height: 100%; overflow-y: auto;">
+										<table class="table table-bordered table-condensed" style="width: 100%;">
+											<thead>
+												<tr>
+													<th>角度</th>
+													<th>增益</th>
+												</tr>
+											</thead>
+											<tbody id="aerial-2d-top-data">
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div id="aerial-item-2d-top-img" style="width: 300px;height: 200px;"></div>
+							</div>
+							<div style="width: 100%;height: 200px;display: flex;flex-flow: row nowrap; margin: 10px 0;">
+								<div style="width: 180px;height: 180px;">
+									<div>垂直波束</div>
+									<div style="width: 100%;height: 100%; overflow-y: auto;">
+										<table class="table table-bordered table-condensed" style="width: 100%;">
+											<thead>
+												<tr>
+													<th>角度</th>
+													<th>增益</th>
+												</tr>
+											</thead>
+											<tbody id="aerial-2d-bottom-data">
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div id="aerial-item-2d-bottom-img" style="width: 300px;height: 200px;"></div>
+							</div>
+						</div>
+						<div id="aerial-item-3d" class="hidden" style="width: 100%;height: 300px; margin-bottom: 10px;">
+						</div>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button class="import btn btn-default" style="float: left;">导入天线</button>
+					<button class="download btn btn-default" style="float: left;">天线文件下载</button>
+
+					<button class="add btn btn-default" data-dismiss="modal">添加</button>
+					<button class="ok btn btn-default">保存</button>
+					<button class="cancel btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="simulation-heatmap-total" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 600px;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">仿真统计结果</h4>
+				</div>
+
+				<div class="modal-body">
+					<div class="custom-item">
+						<span class="custom-item-label" for="length-unit">类型:</span>
+						<select class="custom-item-content custom-select" id="simulation-stat-type">
+							<option value="RSRP">RSRP</option>
+							<option value="SINR">SINR</option>
+						</select>
+
+						<span class="custom-item-label" for="length-unit">分层:</span>
+						<select class="custom-item-content custom-select" id="simulation-stat-level">
+						</select>
+					</div>
+				</div>
+				<div class="modal-body" style="margin-top: 20px;">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>图例</th>
+								<th>名称</th>
+								<th>面积（m²）</th>
+								<th>所占百分比（%）</th>
+							</tr>
+						</thead>
+						<tbody id="simulation-heatmap-total-body">
+							<tr>
+								<td>
+									<div style="background-color: blueviolet; width: 100%;height: 20px;"></div>
+								</td>
+								<td>名称</td>
+								<td>面积（m²）</td>
+								<td>所占百分比（%）</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="modal-footer">
+					<button class="ok btn btn-default" data-dismiss="modal">确定</button>
+					<button class="cancel btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="simulation-ue-cell-total" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 1500px;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">容量仿真-小区级统计</h4>
+				</div>
+
+				<div class="modal-body" style="margin-top: 20px;">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>小区ID</th>
+								<th>平均RSRP</th>
+								<th>边缘RSRP(5%)</th>
+								<th>平均SINR</th>
+								<th>边缘SINR(5%)</th>
+								<th>上行平均吞吐量(Mbps)</th>
+								<th>上行边缘用户平均吞吐量(5%)(Mbps)</th>
+								<th>下行平均吞吐量(Mbps)</th>
+								<th>下行边缘用户平均吞吐量(5%)(Mbps)</th>
+								<th>上行平均包时延</th>
+								<th>下行平均包时延</th>
+								<th>上行PRB利用率</th>
+								<th>下行PRB利用率</th>
+								<th>上行支持用户数</th>
+								<th>下行支持用户数</th>
+								<th>支持用户数(上下行)</th>
+								<th>满意度</th>
+							</tr>
+						</thead>
+						<tbody id="simulation-ue-cell-total-body">
+							<tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="modal-footer">
+					<button class="ok btn btn-default" data-dismiss="modal">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="simulation-ue-area-total" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 1500px;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">容量仿真-规划区统计</h4>
+				</div>
+
+				<div class="modal-body" style="margin-top: 20px;">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>规划区名称</th>
+								<th>小区数</th>
+								<th>平均RSRP</th>
+								<th>边缘RSRP(5%)</th>
+								<th>平均SINR</th>
+								<th>边缘SINR(5%)</th>
+								<th>上行平均吞吐量(Mbps)</th>
+								<th>上行边缘用户平均吞吐量(5%)(Mbps)</th>
+								<th>下行平均吞吐量(Mbps)</th>
+								<th>下行边缘用户平均吞吐量(5%)(Mbps)</th>
+								<th>上行平均包时延</th>
+								<th>下行平均包时延</th>
+								<th>上行支持用户数</th>
+								<th>下行支持用户数</th>
+								<th>支持用户数(上下行)</th>
+							</tr>
+						</thead>
+						<tbody id="simulation-ue-area-total-body">
+							<tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="modal-footer">
+					<button class="ok btn btn-default" data-dismiss="modal">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="simulation-ue-total" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 1500px;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">容量仿真统计</h4>
+				</div>
+
+				<div class="modal-body" style="margin-top: 20px;">
+					<ul class="nav nav-tabs">
+						<li class="active"><a data-toggle="tab" href="http://47.93.20.191:10001/project.html?pid=0#simulation-ue-tab-fix-total">固定用户</a></li>
+						<li class=""><a data-toggle="tab" href="http://47.93.20.191:10001/project.html?pid=0#simulation-ue-tab-line-total">轨迹用户</a></li>
+						<li class="hidden"><a data-toggle="tab" href="http://47.93.20.191:10001/project.html?pid=0#simulation-ue-tab-random-total">随机用户</a></li>
+						<li class=""><a data-toggle="tab" href="http://47.93.20.191:10001/project.html?pid=0#simulation-ue-tab-cell-total">小区级</a></li>
+						<li class=""><a data-toggle="tab" href="http://47.93.20.191:10001/project.html?pid=0#simulation-ue-tab-cell-traffic-total">小区级分业务</a></li>
+						<li><a data-toggle="tab" href="http://47.93.20.191:10001/project.html?pid=0#simulation-ue-tab-area-total">规划区</a></li>
+						<li><a data-toggle="tab" href="http://47.93.20.191:10001/project.html?pid=0#simulation-ue-tab-area-traffic-total">规划区分业务</a></li>
+						<a style="float: right;" id="download-s2r">下载</a>
+					</ul>
+
+					<div class="tab-content">
+						<div id="simulation-ue-tab-fix-total" class="tab-pane fade in active" style="overflow-y: scroll;height: 600px;">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>用户ID</th>
+										<th>平均RSRP</th>
+										<th>平均SINR</th>
+										<th>上行总吞吐量(Mbps)</th>
+										<th>下行总吞吐量(Mbps)</th>
+										<th>上行平均时延(ms)</th>
+										<th>下行平均时延(ms)</th>
+										<th>用户满意度</th>
+									</tr>
+								</thead>
+								<tbody id="simulation-ue-tab-fix-total-body">
+									<tr>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div id="simulation-ue-tab-line-total" class="tab-pane fade in" style="overflow-y: scroll;height: 600px;">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>用户ID</th>
+										<th>平均RSRP</th>
+										<th>平均SINR</th>
+										<th>上行总吞吐量(Mbps)</th>
+										<th>下行总吞吐量(Mbps)</th>
+										<th>上行平均时延(ms)</th>
+										<th>下行平均时延(ms)</th>
+										<th>用户满意度</th>
+									</tr>
+								</thead>
+								<tbody id="simulation-ue-tab-line-total-body">
+									<tr>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div id="simulation-ue-tab-random-total" class="tab-pane fade in" style="overflow-y: scroll;height: 600px;">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>用户ID</th>
+										<th>平均RSRP</th>
+										<th>平均SINR</th>
+										<th>上行总吞吐量(Mbps)</th>
+										<th>下行总吞吐量(Mbps)</th>
+										<th>上行平均时延(ms)</th>
+										<th>下行平均时延(ms)</th>
+										<th>用户满意度</th>
+									</tr>
+								</thead>
+								<tbody id="simulation-ue-tab-random-total-body">
+									<tr>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div id="simulation-ue-tab-cell-total" class="tab-pane fade in" style="overflow-y: scroll;height: 600px;">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>小区ID</th>
+										<th>平均RSRP</th>
+										<th>边缘RSRP(5%)</th>
+										<th>平均SINR</th>
+										<th>边缘SINR(5%)</th>
+										<th>上行平均吞吐量(Mbps)</th>
+										<th>上行边缘用户平均吞吐量(5%)(Mbps)</th>
+										<th>下行平均吞吐量(Mbps)</th>
+										<th>下行边缘用户平均吞吐量(5%)(Mbps)</th>
+										<th>上行平均包时延(ms)</th>
+										<th>下行平均包时延(ms)</th>
+										<th>上行PRB利用率</th>
+										<th>下行PRB利用率</th>
+										<th>上行支持用户数</th>
+										<th>下行支持用户数</th>
+										<th>支持用户数(上下行)</th>
+										<th>满意度</th>
+									</tr>
+								</thead>
+								<tbody id="simulation-ue-tab-cell-total-body">
+									<tr>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div id="simulation-ue-tab-cell-traffic-total" class="tab-pane fade in" style="overflow-y: scroll;height: 600px;">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>小区ID</th>
+										<th>业务类型</th>
+										<th>业务占比</th>
+										<th>平均SINR</th>
+										<th>边缘SINR(5%)</th>
+										<th>上行平均吞吐量(Mbps)</th>
+										<th>上行边缘用户平均吞吐量(5%)(Mbps)</th>
+										<th>下行平均吞吐量(Mbps)</th>
+										<th>下行边缘用户平均吞吐量(5%)(Mbps)</th>
+										<th>上行平均包时延(ms)</th>
+										<th>下行平均包时延(ms)</th>
+										<th>上行支持用户数</th>
+										<th>下行支持用户数</th>
+										<th>支持用户数(上下行)</th>
+										<th>满意度</th>
+									</tr>
+								</thead>
+								<tbody id="simulation-ue-tab-cell-traffic-total-body">
+									<tr>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div id="simulation-ue-tab-area-total" class="tab-pane fade" style="overflow-y: scroll;height: 600px;">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>规划区名称</th>
+										<th>小区数</th>
+										<th>平均RSRP</th>
+										<th>边缘RSRP(5%)</th>
+										<th>平均SINR</th>
+										<th>边缘SINR(5%)</th>
+										<th>上行平均吞吐量(Mbps)</th>
+										<th>上行边缘用户平均吞吐量(5%)(Mbps)</th>
+										<th>下行平均吞吐量(Mbps)</th>
+										<th>下行边缘用户平均吞吐量(5%)(Mbps)</th>
+										<th>上行平均包时延(ms)</th>
+										<th>下行平均包时延(ms)</th>
+										<th>上行支持用户数</th>
+										<th>下行支持用户数</th>
+										<th>支持用户数(上下行)</th>
+									</tr>
+								</thead>
+								<tbody id="simulation-ue-tab-area-total-body">
+									<tr>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div id="simulation-ue-tab-area-traffic-total" class="tab-pane fade" style="overflow-y: scroll;height: 600px;">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>规划区名称</th>
+										<th>小区数</th>
+										<th>业务类型</th>
+										<th>业务占比</th>
+										<th>平均RSRP</th>
+										<th>边缘RSRP(5%)</th>
+										<th>平均SINR</th>
+										<th>边缘SINR(5%)</th>
+										<th>上行平均吞吐量(Mbps)</th>
+										<th>上行边缘用户平均吞吐量(5%)(Mbps)</th>
+										<th>下行平均吞吐量(Mbps)</th>
+										<th>下行边缘用户平均吞吐量(5%)(Mbps)</th>
+										<th>上行平均包时延(ms)</th>
+										<th>下行平均包时延(ms)</th>
+										<th>上行支持用户数</th>
+										<th>下行支持用户数</th>
+										<th>支持用户数(上下行)</th>
+									</tr>
+								</thead>
+								<tbody id="simulation-ue-tab-area-traffic-total-body">
+									<tr>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button class="ok btn btn-default" data-dismiss="modal">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="edit-desktop-legend" role="dialog" data-backdrop="false" data-keyboard="false">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 600px;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">编辑图例</h4>
+				</div>
+
+				<div class="modal-body" style="margin-top: 20px;">
+					<table id="edit-desktop-legend-table" class="table table-bordered">
+						<thead>
+							<tr>
+								<th>颜色</th>
+								<th>上限</th>
+								<th>下限</th>
+								<th>名称</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="edit-desktop-legend-body">
+						</tbody>
+					</table>
+				</div>
+
+				<div class="modal-footer">
+					<button id="edit-desktop-legend-ok" class="ok btn btn-default" data-dismiss="modal">确定</button>
+					<button id="edit-desktop-legend-cancle" class="cancel btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="xiaoqu-management" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 900px; padding-bottom:20px">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">小区管理</h4>
+				</div>
+				<div class="modal-body" style="display: flex;margin:20px">
+					<div style="width: 300px;">
+						<table id="xiaoqu-table" data-pagination="true" data-pagination-detail-h-align="right">
+						</table>
+					</div>
+					<form class="form-horizontal" id="xiaoqu-params-form" style="width: 600px;">
+						<div class="box-body f-container">
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button id="edit-xiaoqu-ok" class="ok btn btn-default">保存</button>
+					<button id="edit-xiaoqu-cancle" class="cancel btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modal-create-xiaoqu" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 500px;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">新建小区</h4>
+				</div>
+
+				<div class="modal-body">
+					<form class="form-horizontal" id="create-xiaoqu-form">
+						<div class="box-body f-container">
+						</div>
+					</form>
+				</div>
+
+				<div class="modal-footer">
+					<button class="ok btn btn-default" data-dismiss="modal">确定</button>
+					<button class="cancel btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="yewu-management" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 900px; padding-bottom:20px">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">业务管理</h4>
+				</div>
+				<div class="modal-body" style="display: flex;margin:20px">
+					<div style="width: 300px;">
+						<table id="yewu-table" data-pagination="true" data-pagination-detail-h-align="right">
+						</table>
+					</div>
+					<form class="form-horizontal" id="yewu-params-form" style="width: 600px;">
+						<div class="box-body f-container">
+						</div>
+					</form>
+				</div>
+
+				<div class="modal-footer">
+					<button class="ok btn btn-default">保存</button>
+					<button class="cancel btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modal-create-yewu" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width: 500px;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">新建业务</h4>
+				</div>
+
+				<div class="modal-body">
+					<form class="form-horizontal" id="yewu-params-form">
+						<div class="box-body f-container">
+						</div>
+					</form>
+				</div>
+
+				<div class="modal-footer">
+					<button class="ok btn btn-default" data-dismiss="modal">确定</button>
+					<button class="cancel btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="my-loading" class="hidden" style="position: absolute;width: 100%;height: 100%;background-color: #a2a4a4;left: 100px;top: 100px;transform: translate(-100px,-100px);z-index: 99998;opacity:0.4;">
+		<div class="sk-chase" style="left: 50%;top: 50%;position: absolute;width: 60px;height: 60px;z-index: 99999;">
+			<div class="sk-chase-dot"></div>
+			<div class="sk-chase-dot"></div>
+			<div class="sk-chase-dot"></div>
+			<div class="sk-chase-dot"></div>
+			<div class="sk-chase-dot"></div>
+			<div class="sk-chase-dot"></div>
+		</div>
+	</div>
+
+
+<input type="file" name="name" style="display: none;" id="importSCheckDataInput">
+<input type="file" name="name" style="display: none;" id="importSCheckResultInput">
+
+<div class="dg ac"><div class="dg main a" style="width: 245px;"><div style="width: 6px; margin-left: -3px; height: 0px; cursor: ew-resize; position: absolute;"></div><ul class="closed" style="height: auto;"><li class="folder"><div class="dg"><ul><li class="title">属性</li><li class="folder"><div class="dg"><ul class="closed"><li class="title">单位</li><li class="cr boolean"><div><span class="property-name">英尺</span><div class="c"><input type="checkbox"></div></div></li><li class="cr boolean"><div><span class="property-name">英寸</span><div class="c"><input type="checkbox"></div></div></li><li class="cr boolean"><div><span class="property-name">米</span><div class="c"><input type="checkbox" checked="checked"></div></div></li><li class="cr boolean"><div><span class="property-name">厘米</span><div class="c"><input type="checkbox"></div></div></li><li class="cr boolean"><div><span class="property-name">毫米</span><div class="c"><input type="checkbox"></div></div></li></ul></div></li><li class="folder"><div class="dg"><ul class="closed"><li class="title">三维</li><li class="folder"><div class="dg"><ul class="closed"><li class="title">摄像机</li><li class="cr number has-slider"><div><span class="property-name">范围(后)</span><div class="c"><div><input type="text"></div><div class="slider"><div class="slider-fg" style="width: 100%;"></div></div></div></div></li><li class="cr number has-slider"><div><span class="property-name">范围(前)</span><div class="c"><div><input type="text"></div><div class="slider"><div class="slider-fg" style="width: 100%;"></div></div></div></div></li><li class="cr boolean"><div><span class="property-name">锁定</span><div class="c"><input type="checkbox"></div></div></li><li class="cr function"><div><span class="property-name">重置</span><div class="c"><div class="button"></div></div></div></li></ul></div></li></ul></div></li><li class="folder"><div class="dg"><ul><li class="title">二维</li><li class="cr boolean"><div><span class="property-name">显示网格</span><div class="c"><input type="checkbox" checked="checked"></div></div></li><li class="cr boolean"><div><span class="property-name">对齐到网格</span><div class="c"><input type="checkbox"></div></div></li><li class="cr number"><div><span class="property-name">网格大小(undefined)</span><div class="c"><input type="text"></div></div></li><li class="cr number has-slider"><div><span class="property-name">缩放</span><div class="c"><div><input type="text"></div><div class="slider"><div class="slider-fg" style="width: 2.04082%;"></div></div></div></div></li><li class="folder"><div class="dg"><ul class="closed"><li class="title">墙体测量</li><li class="cr boolean"><div><span class="property-name">外线</span><div class="c"><input type="checkbox"></div></div></li><li class="cr boolean"><div><span class="property-name">内线</span><div class="c"><input type="checkbox"></div></div></li><li class="cr boolean"><div><span class="property-name">中线</span><div class="c"><input type="checkbox" checked="checked"></div></div></li><li class="cr boolean"><div><span class="property-name">标签</span><div class="c"><input type="checkbox" checked="checked"></div></div></li><li class="cr string"><div><span class="property-name">外线标签</span><div class="c"><input type="text"></div></div></li><li class="cr string"><div><span class="property-name">内线标签</span><div class="c"><input type="text"></div></div></li><li class="cr string"><div><span class="property-name">中线标签</span><div class="c"><input type="text"></div></div></li></ul></div></li><li class="folder"><div class="dg"><ul class="closed"><li class="title">复写板</li><li class="cr number"><div><span class="property-name">实际宽度(undefined)</span><div class="c"><input type="text"></div></div></li><li class="cr number"><div><span class="property-name">实际高度(undefined)</span><div class="c"><input type="text"></div></div></li><li class="cr boolean"><div><span class="property-name">保持宽高比</span><div class="c"><input type="checkbox" checked="checked"></div></div></li><li class="cr number"><div><span class="property-name">平移（X）</span><div class="c"><input type="text"></div></div></li><li class="cr number"><div><span class="property-name">平移（Y）</span><div class="c"><input type="text"></div></div></li><li class="cr number"><div><span class="property-name">定位（X）</span><div class="c"><input type="text"></div></div></li><li class="cr number"><div><span class="property-name">定位（Y）</span><div class="c"><input type="text"></div></div></li><li class="cr number has-slider"><div><span class="property-name">透明度</span><div class="c"><div><input type="text"></div><div class="slider"><div class="slider-fg" style="width: 100%;"></div></div></div></div></li></ul></div></li></ul></div></li></ul></div></li><li class="folder"><div class="dg"><ul class="closed"><li class="title">原点设置</li><li class="cr boolean"><div><span class="property-name">显示原点</span><div class="c"><input type="checkbox" checked="checked"></div></div></li><li class="cr number"><div><span class="property-name">X</span><div class="c"><input type="text"></div></div></li><li class="cr number"><div><span class="property-name">Y</span><div class="c"><input type="text"></div></div></li><li class="cr number"><div><span class="property-name">纬度</span><div class="c"><input type="text"></div></div></li><li class="cr number"><div><span class="property-name">经度</span><div class="c"><input type="text"></div></div></li></ul></div></li><li class="folder"><div class="dg"><ul class="closed"><li class="title">仿真控制</li><li class="cr boolean"><div><span class="property-name">显示网格</span><div class="c"><input type="checkbox"></div></div></li><li class="cr boolean"><div><span class="property-name">显示第1层</span><div class="c"><input type="checkbox" checked="checked"></div></div></li><li class="cr boolean"><div><span class="property-name">显示第2层</span><div class="c"><input type="checkbox"></div></div></li><li class="cr boolean"><div><span class="property-name">显示第3层</span><div class="c"><input type="checkbox"></div></div></li><li class="cr boolean"><div><span class="property-name">显示第4层</span><div class="c"><input type="checkbox"></div></div></li><li class="cr boolean"><div><span class="property-name">显示第5层</span><div class="c"><input type="checkbox"></div></div></li><li class="cr number"><div><span class="property-name">当前栅格ID</span><div class="c"><input type="text"></div></div></li><li class="cr number"><div><span class="property-name">当前栅格RSRP</span><div class="c"><input type="text"></div></div></li></ul></div></li><li class="folder"><div class="dg"><ul class="closed"><li class="title">撒点</li><li class="cr number"><div><span class="property-name">随机撒点</span><div class="c"><input type="text"></div></div></li><li class="cr boolean"><div><span class="property-name">固定撒点</span><div class="c"><input type="checkbox"></div></div></li><li class="cr boolean"><div><span class="property-name">线路撒点</span><div class="c"><input type="checkbox"></div></div></li></ul></div></li><li class="folder"><div class="dg"><ul class="closed"><li class="title">当前选中</li></ul></div></li></ul><div class="close-button close-bottom" style="width: 245px;">Open Controls</div></div></div></body></html>
